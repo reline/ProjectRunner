@@ -12,6 +12,7 @@ Android SDK API 15
 
 ## How to build
 `ndk-build`
+
 `ant debug install`
 
 ## Libraries
