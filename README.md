@@ -8,8 +8,6 @@ Android NDK
 
 Apache Ant
 
-SDL2 source
-
 Android SDK Manager:
 
 	Android 4.0.3:
@@ -23,8 +21,6 @@ Make sure the NDK, Ant, and AndroidSDK-platform-tools are in you Path environmen
 Make sure the JAVA_HOME environment variable points to the JDK folder (example: C:\Program Files\Java\jdk1.8.0_45)
 
 Make sure the ANDROID_HOME environment variable points to the android-sdk-windows folder (example: C:\AndroidSDK)
-
-Make sure ProjectRunner/jni/src/Android.mk line 7 points to the SDL2 source code
 
 ## How to build
 `ndk-build`
