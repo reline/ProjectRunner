@@ -2,13 +2,29 @@
 An android game for class
 
 ## Dependencies
-Apache Ant
-
-64bit JDK 8
+JDK 8
 
 Android NDK
 
-Android SDK API 15
+Apache Ant
+
+SDL2 source
+
+Android SDK Manager:
+
+	Android 4.0.3:
+
+		SDK Platform
+
+		* System Images <- recominded
+
+Make sure the NDK, Ant, and AndroidSDK-platform-tools are in you Path environment variable (example: C:\AndroidDevelopment\android-ndk-r10e;C:\AndroidDevelopment\apache-ant-1.9.6\bin;C:\AndroidSDK\platform-tools)
+
+Make sure the JAVA_HOME environment variable points to the JDK folder (example: C:\Program Files\Java\jdk1.8.0_45)
+
+Make sure the ANDROID_HOME environment variable points to the android-sdk-windows folder (example: C:\AndroidSDK)
+
+Make sure ProjectRunner/jni/src/Android.mk line 7 points to the SDL2 source code
 
 ## How to build
 `ndk-build`
