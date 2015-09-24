@@ -5,53 +5,53 @@ obj/local/armeabi-v7a/objs/SDL2/src/test/SDL_test_harness.o: \
  jni/SDL2/include/SDL_test.h jni/SDL2/include/SDL.h \
  jni/SDL2/include/SDL_main.h jni/SDL2/include/SDL_stdinc.h \
  jni/SDL2/include/SDL_config.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdint.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_wchar_limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/android/api-level.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs_elf.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/posix_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/stddef.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/compiler.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/posix_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/kernel.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/sysmacros.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdio.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdlib.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/string.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/malloc.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/alloca.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/strings.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/memory.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/inttypes.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/ctype.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/math.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/internal_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/syslimits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/page.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdint.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_wchar_limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/android/api-level.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs_elf.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/posix_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/stddef.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/compiler.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/posix_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/kernel.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/sysmacros.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdio.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdlib.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/string.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/malloc.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/alloca.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/strings.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/memory.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/inttypes.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/ctype.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/math.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/internal_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/syslimits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/page.h \
  jni/SDL2/include/SDL_assert.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/signal.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/signal.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/signal.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/sigcontext.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/siginfo.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/siginfo.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/ucontext.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/user.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/signal.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/signal.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/signal.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/sigcontext.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/siginfo.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/siginfo.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/ucontext.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/user.h \
  jni/SDL2/include/SDL_atomic.h jni/SDL2/include/SDL_audio.h \
  jni/SDL2/include/SDL_error.h jni/SDL2/include/SDL_endian.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/endian.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/endian.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/endian.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/endian.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/endian.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/endian.h \
  jni/SDL2/include/SDL_mutex.h jni/SDL2/include/SDL_thread.h \
  jni/SDL2/include/SDL_rwops.h jni/SDL2/include/SDL_clipboard.h \
  jni/SDL2/include/SDL_cpuinfo.h jni/SDL2/include/SDL_events.h \
@@ -73,9 +73,9 @@ obj/local/armeabi-v7a/objs/SDL2/src/test/SDL_test_harness.o: \
  jni/SDL2/include/SDL_test_md5.h jni/SDL2/include/SDL_test_log.h \
  jni/SDL2/include/SDL_test_assert.h jni/SDL2/include/SDL_test_harness.h \
  jni/SDL2/include/SDL_test_images.h jni/SDL2/include/SDL_test_compare.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/time.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/time.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/time.h
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/time.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/time.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/time.h
 
 jni/SDL2/include/SDL_config.h:
 
@@ -97,89 +97,89 @@ jni/SDL2/include/SDL_stdinc.h:
 
 jni/SDL2/include/SDL_config.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdint.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdint.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_wchar_limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/_wchar_limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/android/api-level.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/android/api-level.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs_elf.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/cdefs_elf.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/posix_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/posix_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/stddef.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/stddef.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/compiler.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/compiler.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/posix_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/posix_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/kernel.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/kernel.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/sysmacros.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/sysmacros.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdio.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdio.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdlib.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/stdlib.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/string.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/string.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/malloc.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/malloc.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/alloca.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/alloca.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/strings.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/strings.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/memory.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/memory.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/inttypes.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/inttypes.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/ctype.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/ctype.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/math.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/math.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/internal_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/internal_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/syslimits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/syslimits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/page.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/page.h:
 
 jni/SDL2/include/SDL_assert.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/signal.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/signal.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/signal.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/signal.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/signal.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/signal.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/sigcontext.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/sigcontext.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/siginfo.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm/siginfo.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/siginfo.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/asm-generic/siginfo.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/ucontext.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/ucontext.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/user.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/user.h:
 
 jni/SDL2/include/SDL_atomic.h:
 
@@ -189,11 +189,11 @@ jni/SDL2/include/SDL_error.h:
 
 jni/SDL2/include/SDL_endian.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/endian.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/endian.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/endian.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/endian.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/endian.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/machine/endian.h:
 
 jni/SDL2/include/SDL_mutex.h:
 
@@ -279,8 +279,8 @@ jni/SDL2/include/SDL_test_images.h:
 
 jni/SDL2/include/SDL_test_compare.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/time.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/time.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/time.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/sys/time.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/time.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-arm/usr/include/linux/time.h:

@@ -6,47 +6,47 @@ obj/local/x86/objs/SDL2/src/SDL_assert.o: jni/SDL2/src/SDL_assert.c \
  jni/SDL2/include/SDL_config_android.h jni/SDL2/include/SDL.h \
  jni/SDL2/include/SDL_main.h jni/SDL2/include/SDL_stdinc.h \
  jni/SDL2/include/SDL_config.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdint.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_wchar_limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/android/api-level.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs_elf.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/posix_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/stddef.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/compiler.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types_32.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/kernel.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysmacros.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdio.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdlib.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/string.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/malloc.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/alloca.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/strings.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/memory.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/inttypes.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/ctype.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/math.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/internal_types.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/limits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/syslimits.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page_32.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdint.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_wchar_limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/android/api-level.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs_elf.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/posix_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/stddef.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/compiler.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types_32.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/kernel.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysmacros.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdio.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdlib.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/string.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/malloc.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/alloca.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/strings.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/memory.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/inttypes.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/ctype.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/math.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/internal_types.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/limits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/syslimits.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page_32.h \
  jni/SDL2/include/SDL_assert.h jni/SDL2/include/SDL_atomic.h \
  jni/SDL2/include/SDL_audio.h jni/SDL2/include/SDL_error.h \
  jni/SDL2/include/SDL_endian.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/endian.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/endian.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/endian.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/endian.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/endian.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/endian.h \
  jni/SDL2/include/SDL_mutex.h jni/SDL2/include/SDL_thread.h \
  jni/SDL2/include/SDL_rwops.h jni/SDL2/include/SDL_clipboard.h \
  jni/SDL2/include/SDL_cpuinfo.h jni/SDL2/include/SDL_events.h \
@@ -67,21 +67,21 @@ obj/local/x86/objs/SDL2/src/SDL_assert.o: jni/SDL2/src/SDL_assert.c \
  jni/SDL2/include/SDL_assert.h jni/SDL2/src/SDL_assert_c.h \
  jni/SDL2/src/video/SDL_sysvideo.h jni/SDL2/src/video/../SDL_internal.h \
  jni/SDL2/include/SDL_shape.h jni/SDL2/include/SDL_thread.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/unistd.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/select.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/time.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/time.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/signal.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/signal.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/signal.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/sigcontext.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/siginfo.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/siginfo.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/ucontext.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/user.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysconf.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/capability.h \
- C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/pathconf.h
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/unistd.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/select.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/time.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/time.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/signal.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/signal.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/signal.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/sigcontext.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/siginfo.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/siginfo.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/ucontext.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/user.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysconf.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/capability.h \
+ /home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/pathconf.h
 
 jni/SDL2/src/./SDL_internal.h:
 
@@ -107,75 +107,75 @@ jni/SDL2/include/SDL_stdinc.h:
 
 jni/SDL2/include/SDL_config.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdint.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdint.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_wchar_limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/_wchar_limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/android/api-level.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/android/api-level.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs_elf.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/cdefs_elf.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/posix_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/posix_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/stddef.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/stddef.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/compiler.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/compiler.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types_32.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/posix_types_32.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/kernel.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/kernel.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysmacros.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysmacros.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdio.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdio.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdlib.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/stdlib.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/string.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/string.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/malloc.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/malloc.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/alloca.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/alloca.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/strings.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/strings.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/memory.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/memory.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/inttypes.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/inttypes.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/ctype.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/ctype.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/math.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/math.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/internal_types.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/internal_types.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/limits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/limits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/syslimits.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/syslimits.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page_32.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/page_32.h:
 
 jni/SDL2/include/SDL_assert.h:
 
@@ -187,11 +187,11 @@ jni/SDL2/include/SDL_error.h:
 
 jni/SDL2/include/SDL_endian.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/endian.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/endian.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/endian.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/endian.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/endian.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/machine/endian.h:
 
 jni/SDL2/include/SDL_mutex.h:
 
@@ -273,32 +273,32 @@ jni/SDL2/include/SDL_shape.h:
 
 jni/SDL2/include/SDL_thread.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/unistd.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/unistd.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/select.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/select.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/time.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/time.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/time.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/time.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/signal.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/signal.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/signal.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/signal.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/signal.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/signal.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/sigcontext.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/sigcontext.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/siginfo.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm/siginfo.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/siginfo.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/asm-generic/siginfo.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/ucontext.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/ucontext.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/user.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/user.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysconf.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/sys/sysconf.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/capability.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/linux/capability.h:
 
-C:/AndroidDevelopment/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/pathconf.h:
+/home/delamare/android-ndk-r10e/platforms/android-12/arch-x86/usr/include/pathconf.h:

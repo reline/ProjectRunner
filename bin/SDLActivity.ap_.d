@@ -1,15 +1,15 @@
-J:\ProjectRunner\bin\SDLActivity.ap_ \
- : J:\ProjectRunner\res\drawable-hdpi\ic_launcher.png \
-J:\ProjectRunner\res\drawable-mdpi\ic_launcher.png \
-J:\ProjectRunner\res\drawable-xhdpi\ic_launcher.png \
-J:\ProjectRunner\res\drawable-xxhdpi\ic_launcher.png \
-J:\ProjectRunner\res\layout\main.xml \
-J:\ProjectRunner\res\values\strings.xml \
-J:\ProjectRunner\bin\res\drawable-hdpi\ic_launcher.png \
-J:\ProjectRunner\bin\res\drawable-mdpi\ic_launcher.png \
-J:\ProjectRunner\bin\res\drawable-xhdpi\ic_launcher.png \
-J:\ProjectRunner\bin\res\drawable-xxhdpi\ic_launcher.png \
-J:\ProjectRunner\assets\52_hello_mobile \
-J:\ProjectRunner\assets\52_hello_mobile\hello.bmp \
-J:\ProjectRunner\assets\52_hello_mobile\readme.txt \
-J:\ProjectRunner\bin\AndroidManifest.xml \
+/home/delamare/gitClones/ProjectRunner/bin/SDLActivity.ap_ \
+ : /home/delamare/gitClones/ProjectRunner/res/layout/main.xml \
+/home/delamare/gitClones/ProjectRunner/res/drawable-xhdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/res/drawable-mdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/res/drawable-xxhdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/res/values/strings.xml \
+/home/delamare/gitClones/ProjectRunner/res/drawable-hdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/bin/res/drawable-xhdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/bin/res/drawable-mdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/bin/res/drawable-xxhdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/bin/res/drawable-hdpi/ic_launcher.png \
+/home/delamare/gitClones/ProjectRunner/assets/52_hello_mobile \
+/home/delamare/gitClones/ProjectRunner/assets/52_hello_mobile/readme.txt \
+/home/delamare/gitClones/ProjectRunner/assets/52_hello_mobile/hello.bmp \
+/home/delamare/gitClones/ProjectRunner/bin/AndroidManifest.xml \

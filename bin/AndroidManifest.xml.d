@@ -1,2 +1,2 @@
-J:\ProjectRunner\bin\AndroidManifest.xml : \
-J:\ProjectRunner\AndroidManifest.xml \
+/home/delamare/gitClones/ProjectRunner/bin/AndroidManifest.xml : \
+/home/delamare/gitClones/ProjectRunner/AndroidManifest.xml \
