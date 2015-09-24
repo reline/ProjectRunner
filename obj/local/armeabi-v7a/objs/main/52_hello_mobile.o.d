@@ -184,7 +184,8 @@ obj/local/armeabi-v7a/objs/main/52_hello_mobile.o: \
  C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_istream.c \
  C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_get.h \
  C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_get.c \
- C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_string_io.c
+ C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_string_io.c \
+ jni/src/LTexture.h
 
 jni/src/../SDL2/include/SDL.h:
 
@@ -579,3 +580,5 @@ C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_
 C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_get.c:
 
 C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_string_io.c:
+
+jni/src/LTexture.h:

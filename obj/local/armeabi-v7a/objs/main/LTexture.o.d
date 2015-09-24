@@ -1,5 +1,5 @@
-obj/local/armeabi/objs/main/52_hello_mobile.o: \
- jni/src/52_hello_mobile.cpp jni/src/../SDL2/include/SDL.h \
+obj/local/armeabi-v7a/objs/main/LTexture.o: jni/src/LTexture.cpp \
+ jni/src/LTexture.h jni/src/../SDL2/include/SDL.h \
  jni/src/../SDL2/include/SDL_main.h jni/src/../SDL2/include/SDL_stdinc.h \
  jni/src/../SDL2/include/SDL_config.h \
  jni/src/../SDL2/include/SDL_platform.h \
@@ -184,8 +184,9 @@ obj/local/armeabi/objs/main/52_hello_mobile.o: \
  C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_istream.c \
  C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_get.h \
  C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_get.c \
- C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_string_io.c \
- jni/src/LTexture.h
+ C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_string_io.c
+
+jni/src/LTexture.h:
 
 jni/src/../SDL2/include/SDL.h:
 
@@ -580,5 +581,3 @@ C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_
 C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_num_get.c:
 
 C:/AndroidDevelopment/android-ndk-r10e/sources/cxx-stl/stlport/stlport/stl/_string_io.c:
-
-jni/src/LTexture.h:
