@@ -6,6 +6,8 @@
 #include <string>
 #include <string.h>
 
+#include "Game.h"
+
 class LTexture
 {
 	public:

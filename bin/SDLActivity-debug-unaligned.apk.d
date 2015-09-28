@@ -1,10 +1,10 @@
-/home/delamare/gitClones/ProjectRunner/bin/SDLActivity-debug-unaligned.apk : \
-/home/delamare/gitClones/ProjectRunner/bin/SDLActivity.ap_ \
-/home/delamare/gitClones/ProjectRunner/bin/classes.dex \
-/home/delamare/android-sdk-linux/tools/support/annotations.jar \
-/home/delamare/gitClones/ProjectRunner/libs/armeabi-v7a/libSDL2.so \
-/home/delamare/gitClones/ProjectRunner/libs/armeabi-v7a/libmain.so \
-/home/delamare/gitClones/ProjectRunner/libs/armeabi/libSDL2.so \
-/home/delamare/gitClones/ProjectRunner/libs/armeabi/libmain.so \
-/home/delamare/gitClones/ProjectRunner/libs/x86/libSDL2.so \
-/home/delamare/gitClones/ProjectRunner/libs/x86/libmain.so \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/bin/SDLActivity-debug-unaligned.apk : \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/bin/SDLActivity.ap_ \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/bin/classes.dex \
+/home/baladash/Android_Development/android-sdk-linux/tools/support/annotations.jar \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/libs/armeabi-v7a/libSDL2.so \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/libs/armeabi-v7a/libmain.so \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/libs/armeabi/libSDL2.so \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/libs/armeabi/libmain.so \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/libs/x86/libSDL2.so \
+/home/baladash/Android_Development/SDL2-2.0.3/android-project/libs/x86/libmain.so \

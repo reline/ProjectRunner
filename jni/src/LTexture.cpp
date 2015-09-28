@@ -1,13 +1,13 @@
 #include "LTexture.h"
 
 //The window we'll be rendering to
-SDL_Window* gWindow = NULL;
+// SDL_Window* gWindow = NULL;
 
-//The window renderer
-SDL_Renderer* gRenderer = NULL;
+// //The window renderer
+// SDL_Renderer* Game::instance->renderer = NULL;
 
-//Screen dimensions
-SDL_Rect gScreenRect = { 0, 0, 320, 240 };
+// //Screen dimensions
+// SDL_Rect gScreenRect = { 0, 0, 320, 240 };
 
 LTexture::LTexture()
 {
@@ -50,7 +50,7 @@ bool LTexture::loadFromFile( std::string path )
 		else
 		{
 			//Create blank streamable texture
-			newTexture = SDL_CreateTexture( gRenderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STREAMING, formattedSurface->w, formattedSurface->h );
+			newTexture = SDL_CreateTexture( Game::instance->renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STREAMING, formattedSurface->w, formattedSurface->h );
 			if( newTexture == NULL )
 			{
 				SDL_Log( "Unable to create blank texture! SDL Error: %s\n", SDL_GetError() );
@@ -116,7 +116,7 @@ bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColo
 	if( textSurface != NULL )
 	{
 		//Create texture from surface pixels
-        mTexture = SDL_CreateTextureFromSurface( gRenderer, textSurface );
+        mTexture = SDL_CreateTextureFromSurface( Game::instance->renderer, textSurface );
 		if( mTexture == NULL )
 		{
 			SDL_Log( "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError() );
@@ -145,7 +145,7 @@ bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColo
 bool LTexture::createBlank( int width, int height, SDL_TextureAccess access )
 {
 	//Create uninitialized texture
-	mTexture = SDL_CreateTexture( gRenderer, SDL_PIXELFORMAT_RGBA8888, access, width, height );
+	mTexture = SDL_CreateTexture( Game::instance->renderer, SDL_PIXELFORMAT_RGBA8888, access, width, height );
 	if( mTexture == NULL )
 	{
 		SDL_Log( "Unable to create blank texture! SDL Error: %s\n", SDL_GetError() );
@@ -204,13 +204,13 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 	}
 
 	//Render to screen
-	SDL_RenderCopyEx( gRenderer, mTexture, clip, &renderQuad, angle, center, flip );
+	SDL_RenderCopyEx( Game::instance->renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }
 
 void LTexture::setAsRenderTarget()
 {
 	//Make self render target
-	SDL_SetRenderTarget( gRenderer, mTexture );
+	SDL_SetRenderTarget( Game::instance->renderer, mTexture );
 }
 
 int LTexture::getWidth()
