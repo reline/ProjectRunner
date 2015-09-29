@@ -1,14 +1,5 @@
 #include "LTexture.h"
 
-//The window we'll be rendering to
-// SDL_Window* gWindow = NULL;
-
-// //The window renderer
-// SDL_Renderer* Game::instance->renderer = NULL;
-
-// //Screen dimensions
-// SDL_Rect gScreenRect = { 0, 0, 320, 240 };
-
 LTexture::LTexture()
 {
 	//Initialize

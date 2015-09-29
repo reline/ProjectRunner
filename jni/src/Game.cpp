@@ -36,11 +36,6 @@ Game::Game(char* name, Uint32 flags)
 	// init color
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
-	// init main surface
-	// screenSurface = SDL_GetWindowSurface(window);
-	// SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x00,0x00,0x00));
-	// SDL_UpdateWindowSurface(window);
-
 	// set instance
 	instance = this;
 }
