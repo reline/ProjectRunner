@@ -1,3 +1,7 @@
 *.o
 *.o.d
 *.apk
+bin/
+gen/
+libs/
+obj/
