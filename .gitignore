@@ -3,5 +3,3 @@
 *.apk
 bin/
 gen/
-libs/
-obj/
