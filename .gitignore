@@ -1,9 +1,6 @@
 *.o
 *.o.d
 *.apk
-bin/
-gen/
-
 
 bin/AndroidManifest.xml.d
 bin/SDLActivity-debug-unaligned.apk.d
