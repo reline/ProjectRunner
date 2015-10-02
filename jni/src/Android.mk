@@ -12,7 +12,7 @@ LOCAL_CFLAGS := -std=gnu++11
 
 # Add your application source files here...
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
-	52_hello_mobile.cpp \
+	ProjectRunner.cpp \
 	LTexture.cpp \
 	Game.cpp
 
