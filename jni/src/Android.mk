@@ -14,7 +14,10 @@ LOCAL_CFLAGS := -std=gnu++11
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
 	ProjectRunner.cpp \
 	LTexture.cpp \
-	Game.cpp
+	Game.cpp \
+	Transform.cpp \
+	Vector2.cpp \
+	Thing.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2
 

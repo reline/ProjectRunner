@@ -15,7 +15,7 @@ Game::Game(char* name, Uint32 flags)
 
 	//Set texture filtering to linear
 	if(!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ))
-		SDL_Log( "Warning: Linear texture filtering not enabled!" );
+		SDL_Log("Warning: Linear texture filtering not enabled!");
 
 	//Get device display mode
     SDL_DisplayMode displayMode;

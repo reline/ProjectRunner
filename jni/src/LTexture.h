@@ -1,6 +1,8 @@
 // Lazyfoo LTexture class
 // http://lazyfoo.net/tutorials/SDL/52_hello_mobile/index2.php
 
+#pragma once
+
 #include <SDL.h>
 #include <stdio.h>
 #include <string>
