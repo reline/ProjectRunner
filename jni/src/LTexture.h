@@ -3,12 +3,12 @@
 
 #pragma once
 
+#include "Game.h"
+
 #include <SDL.h>
 #include <stdio.h>
 #include <string>
 #include <string.h>
-
-#include "Game.h"
 
 class LTexture
 {

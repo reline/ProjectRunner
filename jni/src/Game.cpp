@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Thing.h"
 
 Game* Game::instance = nullptr;
 
@@ -47,6 +48,14 @@ Game::~Game()
 	SDL_Quit();
 	printf("Game over man! Game over!\n");
 	exit(0);
+}
+
+void Game::Render()
+{
+	for(Thing* thing : Thing::things)
+	{
+		thing->Render();
+	}
 }
 
 void Game::Init(char* name, Uint32 flags)

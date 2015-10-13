@@ -30,7 +30,7 @@ int main( int argc, char* args[] )
 		"52_hello_mobile/hello.bmp");
 
 	splash.transform.position = Vector2((Game::instance->screenRect.w - splash.image.getWidth()) / 2, 0);
-	
+
 	//Main loop flag
 	bool quit = false;
 
@@ -53,12 +53,10 @@ int main( int argc, char* args[] )
 		splash.transform.position.y++;
 
 		//Clear screen
-		SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF );
-		SDL_RenderClear( Game::instance->renderer );
-
-		//Render splash
-
-		splash.Render();
+		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_RenderClear(Game::instance->renderer);
+		
+		Game::Render();
 
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);

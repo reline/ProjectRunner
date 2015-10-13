@@ -12,12 +12,12 @@ LOCAL_CFLAGS := -std=gnu++11
 
 # Add your application source files here...
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
+	Thing.cpp \
 	ProjectRunner.cpp \
 	LTexture.cpp \
 	Game.cpp \
 	Transform.cpp \
-	Vector2.cpp \
-	Thing.cpp
+	Vector2.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2
 

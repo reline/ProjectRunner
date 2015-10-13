@@ -17,6 +17,7 @@ public:
 	SDL_Renderer* renderer;
 
 	static void Init(char* name, Uint32 flags);
+	static void Render();
 	static void Exit();
 };
 
