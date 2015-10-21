@@ -15,6 +15,7 @@ public:
 	SDL_Rect screenRect;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+	SDL_Rect camera;
 
 	static void Init(char* name, Uint32 flags);
 	static void Render();

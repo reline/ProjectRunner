@@ -37,6 +37,9 @@ Game::Game(char* name, Uint32 flags)
 	// init color
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
+	// camera = { screenRect.w / 3, screenRect.h / 3, (screenRect.w / 3) + screenRect.w, (screenRect.h / 3) + screenRect.h };
+	camera = { 0, 0, screenRect.w, screenRect.h };
+
 	// set instance
 	instance = this;
 }

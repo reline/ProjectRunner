@@ -1,6 +1,6 @@
 #include "Thing.h"
 
-vector<Thing*> Thing::things;
+PackedDynamicArray<Thing*> Thing::things;
 
 Thing::Thing(Transform transform, string path)
 {
@@ -13,7 +13,7 @@ Thing::Thing(Transform transform, string path)
 			SDL_Log("it loaded the file");
 	}
 
-	things.push_back(this);
+	things.Add(this);
 }
 
 Thing::~Thing()
@@ -22,14 +22,18 @@ Thing::~Thing()
 	image.free();
 
 	// Remove from list
-	vector<Thing*>::iterator iter = std::find(things.begin(), things.end(), this);
-	if(iter != things.end())
-		things.erase(iter);
-	// else something went wrong
+	things.RemoveValue(this);
 }
 
 void Thing::Render()
 {
-	// image.render((Game::instance->screenRect.w - image.getWidth()) / 2, (Game::instance->screenRect.h - image.getHeight()) / 2);
+	// image.render(transform.position.x, transform.position.y, &Game::instance->camera);
 	image.render(transform.position.x, transform.position.y);
+
+	// SDL_Rect renderQuad = { transform.position.x, transform.position.y, image.getWidth(), image.getHeight() };
+	// SDL_RenderCopyEx( Game::instance->renderer, image.mTexture, &renderQuad, &Game::instance->camera, 0.0, 0, SDL_FLIP_NONE ); // maybe?
 }
+
+
+	// void render( int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE );
+	// SDL_RenderCopyEx( Game::instance->renderer, mTexture, clip, &renderQuad, angle, center, flip );

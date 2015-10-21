@@ -2,6 +2,7 @@
 
 #include "LTexture.h"
 #include "Transform.h"
+#include "PackedDynamicArray.h"
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -13,7 +14,7 @@ class Thing
 {
 public:
 
-	static vector<Thing*> things; // TODO: figure out the optimal init capacity
+	static PackedDynamicArray<Thing*> things; // TODO: figure out the optimal init capacity
 
 	Transform transform;
 	LTexture image;

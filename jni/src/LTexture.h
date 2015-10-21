@@ -60,9 +60,9 @@ class LTexture
 		int getPitch();
 		Uint32 getPixel32( unsigned int x, unsigned int y );
 
-	private:
 		//The actual hardware texture
 		SDL_Texture* mTexture;
+	private:
 		void* mPixels;
 		int mPitch;
 
