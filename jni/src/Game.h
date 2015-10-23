@@ -19,6 +19,7 @@ public:
 
 	static void Init(char* name, Uint32 flags);
 	static void Render();
+	static void Tick();
 	static void Exit();
 };
 

@@ -16,6 +16,14 @@ Thing::Thing(Transform transform, string path)
 	things.Add(this);
 }
 
+// Thing::Thing(const Thing& thing)
+// {
+// 	this->transform = thing.transform;
+// 	image = thing.image;
+// 	things.Add(this);
+// }
+
+
 Thing::~Thing()
 { 
 	// Dealocate other things
@@ -25,6 +33,11 @@ Thing::~Thing()
 	things.RemoveValue(this);
 }
 
+void Thing::Destroy()
+{
+	delete this;
+}
+
 void Thing::Render()
 {
 	// image.render(transform.position.x, transform.position.y, &Game::instance->camera);
@@ -32,6 +45,11 @@ void Thing::Render()
 
 	// SDL_Rect renderQuad = { transform.position.x, transform.position.y, image.getWidth(), image.getHeight() };
 	// SDL_RenderCopyEx( Game::instance->renderer, image.mTexture, &renderQuad, &Game::instance->camera, 0.0, 0, SDL_FLIP_NONE ); // maybe?
+}
+
+void Thing::Tick()
+{
+	Render();
 }
 
 

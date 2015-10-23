@@ -17,7 +17,8 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
 	LTexture.cpp \
 	Game.cpp \
 	Transform.cpp \
-	Vector2.cpp
+	Vector2.cpp \
+	ConstantMovement.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2
 

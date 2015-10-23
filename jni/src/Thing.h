@@ -20,8 +20,11 @@ public:
 	LTexture image;
 
 	Thing(Transform transform = Transform(), string path = "");
+	// Thing(const Thing& thing);
 	~Thing();
 
 	void Render();
+	void Destroy();
+	virtual void Tick();
 	
 };

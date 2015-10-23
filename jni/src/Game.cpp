@@ -57,8 +57,13 @@ void Game::Render()
 {
 	for(Thing* thing : Thing::things)
 	{
-		thing->Render();
+		thing->Tick();
 	}
+}
+
+void Game::Tick()
+{
+	Render();
 }
 
 void Game::Init(char* name, Uint32 flags)
