@@ -15,7 +15,6 @@ Thing::Thing(Transform transform, string path, int priority)
 	}
 	SDL_Log(("Setting priority to " + SSTR(priority)).c_str()); // Remove this line and all shall fail.
 	this->priority = priority;
-	auto temp = things[priority];
 	thingIndex = things[priority].Add(this);
 }
 
