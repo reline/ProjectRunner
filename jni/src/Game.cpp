@@ -56,13 +56,11 @@ Game::~Game()
 void Game::Render()
 {
 	// Iterate texture lists in order of priority
-	for(auto it : Thing::things)
+	for(auto &it : Thing::things)
 	{
-		SDL_Log("Found a list!");
 		// Iterate textures
 		for(Thing* thing : it.second)
 		{
-			SDL_Log("Found a thing!");
 			// Render texture
 			thing->Render();
 		}

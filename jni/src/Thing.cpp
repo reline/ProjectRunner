@@ -13,9 +13,9 @@ Thing::Thing(Transform transform, string path, int priority)
 		else
 			SDL_Log("it loaded the file");
 	}
-
-	// thingIndex = things.Add(this);
+	SDL_Log(("Setting priority to " + SSTR(priority)).c_str()); // Remove this line and all shall fail.
 	this->priority = priority;
+	auto temp = things[priority];
 	thingIndex = things[priority].Add(this);
 }
 
@@ -32,9 +32,7 @@ Thing::~Thing()
 void Thing::Render()
 {
 	// image.render(transform.position.x, transform.position.y, &Game::instance->camera);
-	SDL_Log("About to render a thing");
 	image.render(transform.position.x, transform.position.y);
-	SDL_Log("Rendered a thing");
 
 	// SDL_Rect renderQuad = { transform.position.x, transform.position.y, image.getWidth(), image.getHeight() };
 	// SDL_RenderCopyEx( Game::instance->renderer, image.mTexture, &renderQuad, &Game::instance->camera, 0.0, 0, SDL_FLIP_NONE ); // maybe?

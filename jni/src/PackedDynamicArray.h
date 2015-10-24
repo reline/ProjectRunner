@@ -33,18 +33,31 @@ public:
 	uint Capacity() { return capacity; }
 	T& operator[](uint i) { return array[i]; }
 	// for(:) support:
-	T* begin() { return array; }
-	T* end() { return &(array[length]); }
+	T* begin() const { return array; }
+	T* end() const { return &(array[length]); }
+
+	PackedDynamicArray(PackedDynamicArray<T> const& other) {
+		SDL_Log("Oh my");
+		array = new T[other.capacity];
+		for(T i : other)
+			Add(i);
+		length = other.length;
+		capacity = other.capacity;
+		SDL_Log("I've been copied");
+	}
 
 	PackedDynamicArray(uint initCapacity = 30) { 
+		SDL_Log("PDA constructing");
 		array = new T[initCapacity];
 		length = 0;
 		capacity = initCapacity;
+		SDL_Log("PDA constructed");
 	}
 
 	~PackedDynamicArray() { if(array != nullptr) delete [] array; }
 
 	uint Add(T value) {
+		SDL_Log("Adding value to PDA");
 		if(!emptySlots.empty()) {
 			uint pos = emptySlots.front();
 			array[pos] = value;
