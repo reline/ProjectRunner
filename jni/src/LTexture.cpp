@@ -1,6 +1,6 @@
 #include "LTexture.h"
 
-LTexture::LTexture()
+LTexture::LTexture(int priority)
 {
 	//Initialize
 	mTexture = NULL;

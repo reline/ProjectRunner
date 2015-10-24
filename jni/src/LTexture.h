@@ -4,17 +4,19 @@
 #pragma once
 
 #include "Game.h"
+#include "PackedDynamicArray.h"
 
 #include <SDL.h>
 #include <stdio.h>
 #include <string>
 #include <string.h>
+#include <map>
 
 class LTexture
 {
 	public:
 		//Initializes variables
-		LTexture();
+		LTexture(int priority = 100);
 
 		//Deallocates memory
 		~LTexture();

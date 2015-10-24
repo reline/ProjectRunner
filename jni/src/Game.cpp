@@ -55,9 +55,15 @@ Game::~Game()
 
 void Game::Render()
 {
-	for(Thing* thing : Thing::things)
+	// Iterate texture lists in order of priority
+	for(auto it : Thing::things)
 	{
-		thing->Render();
+		// Iterate textures
+		for(Thing* thing : it.second)
+		{
+			// Render texture
+			// thing->Render();
+		}
 	}
 }
 

@@ -28,7 +28,7 @@ int main( int argc, char* args[] )
 	Thing Background(Transform(Vector2()), "52_hello_mobile/Background.bmp");
 
 	Thing splash(Transform(Vector2()), "52_hello_mobile/hello.bmp");
-	splash.transform.position = Vector2((Game::instance->screenRect.w - splash.image.getWidth()) / 2, (Game::instance->screenRect.h - splash.image.getHeight()) / 2);
+	splash.transform.position = Vector2((Game::instance->screenRect.w - splash.image.getWidth()) / 2, 0);
 
 	//Main loop flag
 	bool quit = false;
@@ -49,13 +49,13 @@ int main( int argc, char* args[] )
 			}
 		}
 
-		// splash.transform.position.y++; // move the thing down
+		splash.transform.position.y++; // move the thing down
 
 		//Clear screen
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
 		
-		Game::Render();
+		// Game::Render();
 
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);

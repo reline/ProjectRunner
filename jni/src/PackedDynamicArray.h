@@ -5,6 +5,9 @@
 	Values that are removed are quickly replaced before moved to the back of the collection.
 	Trevor Berninger - Oct 18, 2015
 */
+
+#pragma once
+
 #include <iostream>
 #include <vector>
 #include <queue>

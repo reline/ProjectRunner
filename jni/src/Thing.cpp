@@ -1,10 +1,11 @@
 #include "Thing.h"
 
-PackedDynamicArray<Thing*> Thing::things;
+std::map<int, PackedDynamicArray<Thing*>> Thing::things;
 
-Thing::Thing(Transform transform, string path)
+Thing::Thing(Transform transform, string path, int priority)
 {
 	this->transform = transform;
+	image = LTexture(priority);
 	if(path != "")
 	{
 		if(!image.loadFromFile(path))
@@ -13,7 +14,9 @@ Thing::Thing(Transform transform, string path)
 			SDL_Log("it loaded the file");
 	}
 
-	things.Add(this);
+	// thingIndex = things.Add(this);
+	this->priority = priority;
+	thingIndex = things[priority].Add(this);
 }
 
 Thing::~Thing()
@@ -22,7 +25,8 @@ Thing::~Thing()
 	image.free();
 
 	// Remove from list
-	things.RemoveValue(this);
+	// things.RemoveAt(thingIndex);
+	things[priority].RemoveAt(thingIndex);
 }
 
 void Thing::Render()
