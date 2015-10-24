@@ -48,10 +48,10 @@ int main( int argc, char* args[] )
 	middlePath->transform.position = Vector2((Game::instance->screenRect.w - middlePath->image.getWidth()) / 2, 0);
 	rightPath->transform.position = Vector2(Game::instance->screenRect.w - rightPath->image.getWidth(), 0);
 
-	int imageWidth = leftPath.image.getWidth();
+	int imageWidth = leftPath->image.getWidth();
 
-	SDL_Log("Game Screen Height: " + SSTR(Game::instance->screenRect.y));
-	SDL_Log("Right path initial y: " + SSTR(rightPath->transform.position.y));
+	// SDL_Log("Game Screen Height: " + SSTR(Game::instance->screenRect.y));
+	// SDL_Log("Right path initial y: " + SSTR(rightPath->transform.position.y));
 
 	//Main loop flag
 	bool quit = false;
