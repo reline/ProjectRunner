@@ -55,7 +55,7 @@ int main( int argc, char* args[] )
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
 		
-		// Game::Render();
+		Game::Render();
 
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);
