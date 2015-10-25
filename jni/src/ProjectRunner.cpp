@@ -48,10 +48,13 @@ int main( int argc, char* args[] )
 	middlePath->transform.position = Vector2((Game::instance->screenRect.w - middlePath->image.getWidth()) / 2, 0);
 	rightPath->transform.position = Vector2(Game::instance->screenRect.w - rightPath->image.getWidth(), 0);
 
+	// easy access, just how i like it
 	int imageWidth = leftPath->image.getWidth();
+	int imageHeight = leftPath->image.getHeight();
 
-	// SDL_Log("Game Screen Height: " + SSTR(Game::instance->screenRect.y));
-	// SDL_Log("Right path initial y: " + SSTR(rightPath->transform.position.y));
+	// these seem to change within the game loop
+	int screenWidth = Game::instance->screenRect.w;
+	int screenHeight = Game::instance->screenRect.h;
 
 	//Main loop flag
 	bool quit = false;
@@ -72,12 +75,22 @@ int main( int argc, char* args[] )
 			}
 		}
 
-		// TODO: here we reuse our allocated memory for the ConstantMovement objects if they have disappeared from the screen
-		/*if(rightPath->transform.position.y > Game::instance->screenRect.y) { // why is this always true
-			leftPath = new (leftPath) ConstantMovement(Transform(Vector2()), "52_hello_mobile/hello.bmp", Vector2(0, 1));
-			middlePath = new (middlePath) ConstantMovement(Transform(Vector2((Game::instance->screenRect.w - imageWidth / 2, 0))), "52_hello_mobile/hello.bmp", Vector2(0, 1));
-			rightPath = new (rightPath) ConstantMovement(Transform(Vector2((Game::instance->screenRect.w - imageWidth, 0))), "52_hello_mobile/hello.bmp", Vector2(0, 1));
-		}*/
+		// here we reuse our allocated memory for the ConstantMovement objects if they have disappeared from the screen
+		if(leftPath->transform.position.y > screenHeight) // temporary kill box type thing
+		{
+			leftPath->~ConstantMovement();
+			leftPath = new (leftPath) ConstantMovement(Transform(Vector2(0, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
+		}
+		if(middlePath->transform.position.y > screenHeight)
+		{
+			middlePath->~ConstantMovement();
+			middlePath = new (middlePath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth) / 2, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
+		}
+		if(rightPath->transform.position.y > screenHeight)
+		{
+			rightPath->~ConstantMovement();
+			rightPath = new (rightPath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth), -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
+		}
 
 		//Clear screen
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
