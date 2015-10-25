@@ -14,7 +14,7 @@ Android SDK Manager:
 
 		SDK Platform
 
-		* System Images <- recominded
+		* System Images (<- recommended)
 
 Make sure the NDK, Ant, and AndroidSDK-platform-tools are in you Path environment variable (example: C:\AndroidDevelopment\android-ndk-r10e;C:\AndroidDevelopment\apache-ant-1.9.6\bin;C:\AndroidSDK\platform-tools)
 
@@ -27,6 +27,12 @@ Make sure the ANDROID_HOME environment variable points to the android-sdk-window
 
 `ant debug install`
 
+OR
+
+'make install'
+
+all in the root folder
+
 ## Libraries
 SDL2
 
@@ -35,10 +41,10 @@ Google Play Game Services
 ## Specifications
 Procedural endless level
 
-3 lanes
+Move across three lanes
 
-Turning right and left
+Turn right and left to avoid crashing
 
-Random obsticles you must avoid
+Random obstacles must be avoided
 
-Leaderboard local and global
+Local and global leaderboards
