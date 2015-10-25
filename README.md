@@ -23,15 +23,13 @@ Make sure the JAVA_HOME environment variable points to the JDK folder (example: 
 Make sure the ANDROID_HOME environment variable points to the android-sdk-windows folder (example: C:\AndroidSDK)
 
 ## How to build
-`ndk-build`
-
-`ant debug install`
+`ndk-build` && `ant debug install`
 
 OR
 
-'make install'
+`make install`
 
-all in the root folder
+in the root folder
 
 ## Libraries
 SDL2
@@ -39,7 +37,7 @@ SDL2
 Google Play Game Services
 
 ## Specifications
-Procedural endless level
+Procedurally generated endless level
 
 Move across three lanes
 
