@@ -46,6 +46,14 @@ Game::Game(char* name, Uint32 flags)
 
 Game::~Game()
 {
+	for(auto &it : Thing::things)
+	{
+		// Iterate textures
+		for(Thing* thing : it.second)
+		{
+			thing->Destroy();
+		}
+	}
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -55,14 +63,22 @@ Game::~Game()
 
 void Game::Render()
 {
-	for(Thing* thing : Thing::things)
+	// Iterate texture lists in order of priority
+	for(auto &it : Thing::things)
 	{
-		thing->Tick();
+		// Iterate textures
+		for(Thing* thing : it.second)
+		{
+			thing->Tick();
+			// Render texture
+			thing->Render();
+		}
 	}
 }
 
 void Game::Tick()
 {
+	instance->frames++;
 	Render();
 }
 

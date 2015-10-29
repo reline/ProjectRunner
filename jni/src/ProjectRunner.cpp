@@ -7,27 +7,27 @@
 #include <string>
 #include <sstream>
 
+#include "GameManager.h"
 #include "Game.h"
 #include "LTexture.h"
 #include "Transform.h"
 #include "Thing.h"
 #include "Vector2.h"
 #include "ConstantMovement.h"
+#include "Spawner.h"
 
 #define SSTR(x) dynamic_cast<std::ostringstream&>((std::ostringstream() << std::dec << x)).str()
-
-void close()
-{
-	Game::Exit();
-}
 
 int main( int argc, char* args[] )
 {
 	//Start up SDL and create window
 	Game::Init("SDL_Tutorial", SDL_WINDOW_SHOWN);
+	GameManager manager;
 
 	//Draw background to the screen
-	Thing Background(Transform(Vector2()), "52_hello_mobile/Background.bmp");
+	Thing::Spawn(Transform(Vector2()), "52_hello_mobile/Background.bmp");
+
+	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
 	//Create and draw the terrain to the screen
 	ConstantMovement* leftPath = new ConstantMovement(
@@ -37,12 +37,14 @@ int main( int argc, char* args[] )
 	ConstantMovement* middlePath = new ConstantMovement(
 		Transform(Vector2()), 
 		"52_hello_mobile/hello.bmp", Vector2(0, 1));
-	
 
 	ConstantMovement* rightPath = new ConstantMovement(
 		Transform(Vector2()), 
 		"52_hello_mobile/hello.bmp", Vector2(0, 1));
 
+	manager.lanes.push_back(leftPath);
+	manager.lanes.push_back(middlePath);
+	manager.lanes.push_back(rightPath);
 
 	leftPath->transform.position = Vector2(0, 0);
 	middlePath->transform.position = Vector2((Game::instance->screenRect.w - middlePath->image.getWidth()) / 2, 0);
@@ -55,6 +57,9 @@ int main( int argc, char* args[] )
 	// these seem to change within the game loop
 	int screenWidth = Game::instance->screenRect.w;
 	int screenHeight = Game::instance->screenRect.h;
+
+	// Thing splash(Transform(Vector2()), "52_hello_mobile/hello.bmp");
+	// splash.transform.position = Vector2((Game::instance->screenRect.w - splash.image.getWidth()) / 2, 0);
 
 	//Main loop flag
 	bool quit = false;
@@ -92,6 +97,8 @@ int main( int argc, char* args[] )
 			rightPath = new (rightPath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth), -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
 		}
 
+		// splash.transform.position.y++; // move the thing down
+
 		//Clear screen
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
@@ -106,7 +113,7 @@ int main( int argc, char* args[] )
 	// rightPath->Destroy();
 
 	//Free resources and close SDL
-	close();
+	Game::Exit();
 
 	return 0;
 }

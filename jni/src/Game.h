@@ -7,6 +7,7 @@
 class Game
 {
 private:
+	
 	Game(char* name, Uint32 flags);
 	~Game();
 
@@ -16,6 +17,7 @@ public:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 	SDL_Rect camera;
+	unsigned long long frames;
 
 	static void Init(char* name, Uint32 flags);
 	static void Render();

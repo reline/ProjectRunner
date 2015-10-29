@@ -12,15 +12,18 @@ using std::vector;
 
 class Thing
 {
+private:
+		unsigned int thingIndex;
+		int priority;
 public:
 
-	static PackedDynamicArray<Thing*> things; // TODO: figure out the optimal init capacity
+	static std::map<int, PackedDynamicArray<Thing*>> things;
+	static Thing* Spawn(Transform transform = Transform(), string path = "", int priority = 100);
 
 	Transform transform;
 	LTexture image;
-
-	Thing(Transform transform = Transform(), string path = "");
-	// Thing(const Thing& thing);
+	
+	Thing(Transform transform = Transform(), string path = "", int priority = 100);
 	~Thing();
 
 	void Render();

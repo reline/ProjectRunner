@@ -12,6 +12,8 @@ LOCAL_CFLAGS := -std=c++11
 
 # Add your application source files here...
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
+	GameManager.cpp \
+	Spawner.cpp \
 	Thing.cpp \
 	ProjectRunner.cpp \
 	LTexture.cpp \
