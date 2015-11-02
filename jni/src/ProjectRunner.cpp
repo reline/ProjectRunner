@@ -45,7 +45,7 @@ int main( int argc, char* args[] )
 	// our player!
 	ConstantMovement* player = new ConstantMovement(
 		Transform(Vector2()),
-		"52_hello_mobile/hello.bmp", Vector2(0, 2));
+		"52_hello_mobile/player.bmp", Vector2(0, 2));
 
 	manager.lanes.push_back(leftPath);
 	manager.lanes.push_back(middlePath);
@@ -90,7 +90,7 @@ int main( int argc, char* args[] )
 			{
 				touchLocation.x = e.tfinger.x * screenWidth;
 				touchLocation.y = e.tfinger.y * screenHeight;
-				// todo: move our player to the lane clicked within
+				// ove our player to the lane clicked within
 				if(touchLocation.x > screenWidth / 3)
 				{
 					if(touchLocation.x > screenWidth * 2/3)
@@ -115,7 +115,7 @@ int main( int argc, char* args[] )
 			{
 				touchLocation.x = e.tfinger.x * screenWidth;
 				touchLocation.y = e.tfinger.y * screenHeight;
-				// todo: turn our player to the correct direction
+				// todo: turn our player to the gestured direction
 			}
 			//Touch release
 			else if(e.type == SDL_FINGERUP)
@@ -145,7 +145,7 @@ int main( int argc, char* args[] )
 		{
 			int pos = player->transform.position.x;
 			player->~ConstantMovement();
-			player = new (player) ConstantMovement(Transform(Vector2(pos, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 2));
+			player = new (player) ConstantMovement(Transform(Vector2(pos, -imageHeight)), "52_hello_mobile/player.bmp", Vector2(0, 2));
 		}
 
 		//Clear screen
