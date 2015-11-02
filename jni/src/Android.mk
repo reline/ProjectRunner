@@ -20,7 +20,8 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
 	Game.cpp \
 	Transform.cpp \
 	Vector2.cpp \
-	ConstantMovement.cpp
+	ConstantMovement.cpp \
+	Player.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2
 

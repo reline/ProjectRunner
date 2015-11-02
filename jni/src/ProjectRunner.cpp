@@ -14,6 +14,7 @@
 #include "Thing.h"
 #include "Vector2.h"
 #include "ConstantMovement.h"
+#include "Player.h"
 #include "Spawner.h"
 
 #define SSTR(x) dynamic_cast<std::ostringstream&>((std::ostringstream() << std::dec << x)).str()
@@ -43,9 +44,9 @@ int main( int argc, char* args[] )
 		"52_hello_mobile/hello.bmp", Vector2(0, 1));
 
 	// our player!
-	ConstantMovement* player = new ConstantMovement(
+	Player* player = new Player(
 		Transform(Vector2()),
-		"52_hello_mobile/player.bmp", Vector2(0, 2));
+		"52_hello_mobile/player.bmp", Vector2(0, -2), CENTER);
 
 	manager.lanes.push_back(leftPath);
 	manager.lanes.push_back(middlePath);
@@ -63,7 +64,7 @@ int main( int argc, char* args[] )
 	middlePath->transform.position = Vector2((screenWidth - middlePath->image.getWidth()) / 2, 0);
 	rightPath->transform.position = Vector2(screenWidth - rightPath->image.getWidth(), 0);
 
-	player->transform.position = Vector2((screenWidth - player->image.getWidth()) / 2, 0);
+	player->transform.position = Vector2((screenWidth - player->image.getWidth()) / 2, screenHeight);
 
 	//Main loop flag
 	bool quit = false;
@@ -90,24 +91,14 @@ int main( int argc, char* args[] )
 			{
 				touchLocation.x = e.tfinger.x * screenWidth;
 				touchLocation.y = e.tfinger.y * screenHeight;
-				// ove our player to the lane clicked within
-				if(touchLocation.x > screenWidth / 3)
+				// move our player towards the clicked lane
+				if(touchLocation.x < player->transform.position.x)
 				{
-					if(touchLocation.x > screenWidth * 2/3)
-					{
-						// right lane
-						player->transform.position = Vector2(screenWidth - player->image.getWidth(), player->transform.position.y);
-					}
-					else
-					{
-						// middle lane
-						player->transform.position = Vector2((screenWidth - player->image.getWidth()) / 2, player->transform.position.y);
-					}
+					player->moveLeft(screenWidth/3);
 				}
-				else
+				else if(touchLocation.x > player->transform.position.x + player->image.getWidth())
 				{
-					// left lane
-					player->transform.position = Vector2(0, player->transform.position.y);
+					player->moveRight(screenWidth/3);
 				}
 			}
 			//Touch motion
@@ -141,11 +132,12 @@ int main( int argc, char* args[] )
 			rightPath->~ConstantMovement();
 			rightPath = new (rightPath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth), -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
 		}
-		if (player->transform.position.y > screenHeight)
+		if (player->transform.position.y + imageHeight < 0)
 		{
 			int pos = player->transform.position.x;
-			player->~ConstantMovement();
-			player = new (player) ConstantMovement(Transform(Vector2(pos, -imageHeight)), "52_hello_mobile/player.bmp", Vector2(0, 2));
+			uint lane = player->getLane();
+			player->~Player();
+			player = new (player) Player(Transform(Vector2(pos, screenHeight)), "52_hello_mobile/player.bmp", Vector2(0, -2), lane);
 		}
 
 		//Clear screen
