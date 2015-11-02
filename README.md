@@ -23,7 +23,7 @@ Make sure the JAVA_HOME environment variable points to the JDK folder (example: 
 Make sure the ANDROID_HOME environment variable points to the android-sdk-windows folder (example: C:\AndroidSDK)
 
 ## How to build
-`ndk-build` && `ant debug install`
+`ndk-build && ant debug install`
 
 OR
 
