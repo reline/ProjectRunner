@@ -10,6 +10,7 @@ private:
 	
 	Game(char* name, Uint32 flags);
 	~Game();
+	int currentSecond;
 
 public:
 	static Game* instance;
@@ -18,6 +19,7 @@ public:
 	SDL_Renderer* renderer;
 	SDL_Rect camera;
 	unsigned long long frames;
+	int score;
 
 	static void Init(char* name, Uint32 flags);
 	static void Render();

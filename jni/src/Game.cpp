@@ -42,6 +42,9 @@ Game::Game(char* name, Uint32 flags)
 
 	// set instance
 	instance = this;
+
+	score = 0;
+	currentSecond = 0;
 }
 
 Game::~Game()
@@ -79,6 +82,13 @@ void Game::Render()
 void Game::Tick()
 {
 	instance->frames++;
+	instance->currentSecond++;
+	if (instance->currentSecond == 60)
+	{
+		instance->score++;
+		instance->currentSecond = 0;
+	}
+	//SDL_Log(SSTR(instance->score).c_str());
 	Render();
 }
 

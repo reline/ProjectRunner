@@ -14,12 +14,14 @@ Thing* Spawner::GetRandomLane()
 void Spawner::SpawnRandomObstical()
 {
 	ConstantMovement* t = new ConstantMovement(
-		Transform(Vector2(transform.position.x, transform.position.y)), 
+		Transform(Vector2(GetRandomLane()->transform.position.x, transform.position.y)), 
 		"52_hello_mobile/hello.bmp", Vector2(0, 1)); // (startLocation, imageFilePath, velocity)
 }
 
 void Spawner::Tick()
 {
-	if(!(Game::instance->frames % 300))
+	// if(!(Game::instance->frames % 300))
+	// 	SpawnRandomObstical();
+	if (Game::instance->score % 5 == 0)
 		SpawnRandomObstical();
 }
