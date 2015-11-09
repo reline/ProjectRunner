@@ -10,20 +10,13 @@ Player::Player()
 	this->currentLane = CENTER;
 }
 
-Player::Player(Transform transform = Transform(), string filePath = "", Vector2 velocity = Vector2(), uint initLane = CENTER)
-	: ConstantMovement(transform, filePath, velocity)
+Player::Player(Transform transform, string filePath, int priority, uint initLane)
+	: Thing(transform, filePath, priority)
 {
 	this->currentLane = initLane;
 }
 
 Player::~Player() { }
-
-void Player::Tick()
-{
-	Thing::Tick();
-	// constantly move the object across the screen at its current velocity
-	this->transform.position += velocity;
-}
 
 void Player::moveLeft(int distance) // should i pass how much to move, or the screen width?
 {

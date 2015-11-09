@@ -25,25 +25,31 @@ int main( int argc, char* args[] )
 	Game::Init("SDL_Tutorial", SDL_WINDOW_SHOWN);
 	GameManager manager;
 
+	// these seem to change within the game loop
+	int screenWidth = Game::instance->screenRect.w;
+	int screenHeight = Game::instance->screenRect.h;
+
 	//Draw background to the screen
 	Thing::Spawn(Transform(Vector2()), "52_hello_mobile/Background.bmp");
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
+	
+
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
-		"52_hello_mobile/player.bmp", Vector2(0, -2), CENTER);
+		"52_hello_mobile/player.bmp", 100, CENTER); // rendered last (100)
 
-	// these seem to change within the game loop
-	int screenWidth = Game::instance->screenRect.w;
-	int screenHeight = Game::instance->screenRect.h;
+	float middleLaneXCoord = (screenWidth - player->image.getWidth()) / 2;
+	float leftLaneXCoord = middleLaneXCoord - (screenWidth / 3);
+	float rightLaneXCoord = middleLaneXCoord + (screenWidth / 3);
 
-	manager.lanes.push_back(Vector2(0,0));
-	manager.lanes.push_back(Vector2(((screenWidth - player->image.getWidth()) / 2) ,0));
-	manager.lanes.push_back(Vector2(screenWidth - player->image.getWidth() ,0));
+	manager.lanes.push_back(Vector2(leftLaneXCoord, 0));
+	manager.lanes.push_back(Vector2(leftLaneXCoord, 0));
+	manager.lanes.push_back(Vector2(rightLaneXCoord, 0));
 
-	player->transform.position = Vector2((screenWidth - player->image.getWidth()) / 2, screenHeight);
+	player->transform.position = Vector2(middleLaneXCoord, screenHeight - (player->image.getWidth() * 1.1));
 
 	//Main loop flag
 	bool quit = false;

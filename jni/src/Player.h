@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ConstantMovement.h"
+#include "Thing.h"
 
 #define LEFT 1
 #define CENTER 2
@@ -8,15 +8,15 @@
 
 using std::string;
 
-class Player : public ConstantMovement
+class Player : public Thing
 {
 public:
 	uint currentLane;
 
 	Player();
-	Player(Transform transform, string filePath, Vector2 velocity, uint initLane);
+	Player(Transform transform = Transform(), string filePath = "", int priority = 1, uint initLane = CENTER);
 	~Player();
-	virtual void Tick() override;
+	// virtual void Tick() override;
 
 	// change lanes
 	void moveLeft(int screenWidth);

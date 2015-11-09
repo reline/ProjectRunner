@@ -18,6 +18,7 @@ private:
 public:
 
 	static std::map<int, PackedDynamicArray<Thing*>> things;
+	// priority: 1 is rendered first (on bottom), 100 is rendered last (on top)
 	static Thing* Spawn(Transform transform = Transform(), string path = "", int priority = 100);
 
 	Transform transform;

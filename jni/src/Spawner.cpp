@@ -12,7 +12,7 @@ Vector2& Spawner::GetRandomLane()
 	return GameManager::instance->lanes[rand() % 3];
 }
 
-void Spawner::SpawnRandomObstical()
+void Spawner::SpawnRandomObstacle()
 {
 	ConstantMovement* t = new ConstantMovement(
 		Transform(GetRandomLane()), 
@@ -22,11 +22,11 @@ void Spawner::SpawnRandomObstical()
 void Spawner::Tick()
 {
 	// if(!(Game::instance->frames % 300))
-	// 	SpawnRandomObstical();
+	// 	SpawnRandomObstacle();
 	if (Game::instance->score % 5 == 0)
 	{
 		if(!hasSpawnedThisScore)
-			SpawnRandomObstical();
+			SpawnRandomObstacle();
 		hasSpawnedThisScore = true;
 	}
 	else

@@ -18,5 +18,5 @@ public:
 	Spawner(Transform transform = Transform());
 
 	void Tick() override;
-	void SpawnRandomObstical();
+	void SpawnRandomObstacle();
 };
