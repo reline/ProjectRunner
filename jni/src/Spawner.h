@@ -10,7 +10,9 @@
 class Spawner : Thing
 {
 private:
-	Thing* GetRandomLane();
+	Vector2& GetRandomLane();
+
+	bool hasSpawnedThisScore;
 
 public:
 	Spawner(Transform transform = Transform());

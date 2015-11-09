@@ -30,39 +30,18 @@ int main( int argc, char* args[] )
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
-	//Create and draw the terrain to the screen
-	ConstantMovement* leftPath = new ConstantMovement(
-		Transform(Vector2()), 
-		"52_hello_mobile/hello.bmp", Vector2(0, 1)); // (startLocation, imageFilePath, velocity)
-
-	ConstantMovement* middlePath = new ConstantMovement(
-		Transform(Vector2()), 
-		"52_hello_mobile/hello.bmp", Vector2(0, 1));
-
-	ConstantMovement* rightPath = new ConstantMovement(
-		Transform(Vector2()), 
-		"52_hello_mobile/hello.bmp", Vector2(0, 1));
-
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
 		"52_hello_mobile/player.bmp", Vector2(0, -2), CENTER);
 
-	manager.lanes.push_back(leftPath);
-	manager.lanes.push_back(middlePath);
-	manager.lanes.push_back(rightPath);
-
-	// easy access, just how i like it
-	int imageWidth = leftPath->image.getWidth();
-	int imageHeight = leftPath->image.getHeight();
-
 	// these seem to change within the game loop
 	int screenWidth = Game::instance->screenRect.w;
 	int screenHeight = Game::instance->screenRect.h;
 
-	leftPath->transform.position = Vector2(0, 0);
-	middlePath->transform.position = Vector2((screenWidth - middlePath->image.getWidth()) / 2, 0);
-	rightPath->transform.position = Vector2(screenWidth - rightPath->image.getWidth(), 0);
+	manager.lanes.push_back(Vector2(0,0));
+	manager.lanes.push_back(Vector2(((screenWidth - player->image.getWidth()) / 2) ,0));
+	manager.lanes.push_back(Vector2(screenWidth - player->image.getWidth() ,0));
 
 	player->transform.position = Vector2((screenWidth - player->image.getWidth()) / 2, screenHeight);
 
@@ -117,28 +96,28 @@ int main( int argc, char* args[] )
 		}
 
 		// here we reuse our allocated memory for the ConstantMovement objects if they have disappeared from the screen
-		if(leftPath->transform.position.y > screenHeight) // temporary kill-box type thing
-		{
-			leftPath->~ConstantMovement();
-			leftPath = new (leftPath) ConstantMovement(Transform(Vector2(0, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
-		}
-		if(middlePath->transform.position.y > screenHeight)
-		{
-			middlePath->~ConstantMovement();
-			middlePath = new (middlePath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth) / 2, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
-		}
-		if(rightPath->transform.position.y > screenHeight)
-		{
-			rightPath->~ConstantMovement();
-			rightPath = new (rightPath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth), -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
-		}
-		if (player->transform.position.y + imageHeight < 0)
-		{
-			int pos = player->transform.position.x;
-			uint lane = player->getLane();
-			player->~Player();
-			player = new (player) Player(Transform(Vector2(pos, screenHeight)), "52_hello_mobile/player.bmp", Vector2(0, -2), lane);
-		}
+		// if(leftPath->transform.position.y > screenHeight) // temporary kill-box type thing
+		// {
+		// 	leftPath->~ConstantMovement();
+		// 	leftPath = new (leftPath) ConstantMovement(Transform(Vector2(0, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
+		// }
+		// if(middlePath->transform.position.y > screenHeight)
+		// {
+		// 	middlePath->~ConstantMovement();
+		// 	middlePath = new (middlePath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth) / 2, -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
+		// }
+		// if(rightPath->transform.position.y > screenHeight)
+		// {
+		// 	rightPath->~ConstantMovement();
+		// 	rightPath = new (rightPath) ConstantMovement(Transform(Vector2((screenWidth - imageWidth), -imageHeight)), "52_hello_mobile/hello.bmp", Vector2(0, 1));
+		// }
+		// if (player->transform.position.y + imageHeight < 0)
+		// {
+		// 	int pos = player->transform.position.x;
+		// 	uint lane = player->getLane();
+		// 	player->~Player();
+		// 	player = new (player) Player(Transform(Vector2(pos, screenHeight)), "52_hello_mobile/player.bmp", Vector2(0, -2), lane);
+		// }
 
 		//Clear screen
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);

@@ -4,9 +4,10 @@ Spawner::Spawner(Transform transform)
 	: Thing(transform)
 {
 	srand(time(0));
+	hasSpawnedThisScore = false;
 }
 
-Thing* Spawner::GetRandomLane()
+Vector2& Spawner::GetRandomLane()
 {
 	return GameManager::instance->lanes[rand() % 3];
 }
@@ -14,7 +15,7 @@ Thing* Spawner::GetRandomLane()
 void Spawner::SpawnRandomObstical()
 {
 	ConstantMovement* t = new ConstantMovement(
-		Transform(Vector2(GetRandomLane()->transform.position.x, transform.position.y)), 
+		Transform(GetRandomLane()), 
 		"52_hello_mobile/hello.bmp", Vector2(0, 1)); // (startLocation, imageFilePath, velocity)
 }
 
@@ -23,5 +24,11 @@ void Spawner::Tick()
 	// if(!(Game::instance->frames % 300))
 	// 	SpawnRandomObstical();
 	if (Game::instance->score % 5 == 0)
-		SpawnRandomObstical();
+	{
+		if(!hasSpawnedThisScore)
+			SpawnRandomObstical();
+		hasSpawnedThisScore = true;
+	}
+	else
+		hasSpawnedThisScore = false;
 }
