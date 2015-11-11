@@ -7,6 +7,8 @@ LOCAL_MODULE := main
 SDL_PATH := ../SDL2
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
+#LOCAL_C_INCLUDES := /usr/include/SDL2
+#LOCAL_C_INCLUDES := /usr/include
 
 LOCAL_CFLAGS := -std=c++11
 
@@ -23,7 +25,7 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
 	ConstantMovement.cpp \
 	Player.cpp
 
-LOCAL_SHARED_LIBRARIES := SDL2
+LOCAL_SHARED_LIBRARIES := SDL2 SDL2_ttf
 
 LOCAL_LDLIBS := -lGLESv1_CM -lGLESv2 -llog
 
