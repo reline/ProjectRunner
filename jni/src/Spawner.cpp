@@ -5,6 +5,7 @@ Spawner::Spawner(Transform transform)
 {
 	srand(time(0));
 	hasSpawnedThisScore = false;
+	obstacleSpeed = Vector2(0,5);
 }
 
 Vector2& Spawner::GetRandomLane()
@@ -16,17 +17,19 @@ void Spawner::SpawnRandomObstacle()
 {
 	ConstantMovement* t = new ConstantMovement(
 		Transform(GetRandomLane()), 
-		"52_hello_mobile/hello.bmp", Vector2(0, 1)); // (startLocation, imageFilePath, velocity)
+		"52_hello_mobile/Enemy.bmp", obstacleSpeed); // (startLocation, imageFilePath, velocity)
 }
 
 void Spawner::Tick()
 {
-	// if(!(Game::instance->frames % 300))
-	// 	SpawnRandomObstacle();
-	if (Game::instance->score % 5 == 0)
+	if (Game::instance->score % 1 == 0)
 	{
 		if(!hasSpawnedThisScore)
-			SpawnRandomObstacle();
+		{
+			int secondsToSpawn = rand() % 5 + 1; // in order to have increased spawning, we have to make this smaller over time.
+			if (Game::instance->score % secondsToSpawn == 0)
+				SpawnRandomObstacle();
+		}
 		hasSpawnedThisScore = true;
 	}
 	else

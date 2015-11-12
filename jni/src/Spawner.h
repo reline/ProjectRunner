@@ -19,4 +19,6 @@ public:
 
 	void Tick() override;
 	void SpawnRandomObstacle();
+
+	Vector2 obstacleSpeed;
 };

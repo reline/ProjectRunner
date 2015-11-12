@@ -34,7 +34,7 @@ int main( int argc, char* args[] )
 	int screenHeight = Game::instance->screenRect.h;
 
 	//Draw background to the screen
-	Thing::Spawn(Transform(Vector2()), "52_hello_mobile/Background.bmp");
+	Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
@@ -50,7 +50,7 @@ int main( int argc, char* args[] )
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
-		"52_hello_mobile/player.bmp", 100, CENTER); // rendered last (100)
+		"52_hello_mobile/Player.bmp", 100, CENTER); // rendered last (100)
 
 	float middleLaneXCoord = (screenWidth - player->image.getWidth()) / 2;
 	float leftLaneXCoord = middleLaneXCoord - (screenWidth / 3);
@@ -60,7 +60,7 @@ int main( int argc, char* args[] )
 	manager.lanes.push_back(Vector2(leftLaneXCoord, 0));
 	manager.lanes.push_back(Vector2(rightLaneXCoord, 0));
 
-	player->transform.position = Vector2(middleLaneXCoord, screenHeight - (player->image.getWidth() * 1.1));
+	player->transform.position = Vector2(middleLaneXCoord, screenHeight - (player->image.getWidth() * 2));
 
 	//Main loop flag
 	bool quit = false;
