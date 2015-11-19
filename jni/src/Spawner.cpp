@@ -22,14 +22,10 @@ void Spawner::SpawnRandomObstacle()
 
 void Spawner::Tick()
 {
-	if (Game::instance->score % 1 == 0)
+	if (Game::instance->score % 5 == 0)
 	{
 		if(!hasSpawnedThisScore)
-		{
-			int secondsToSpawn = rand() % 5 + 1; // in order to have increased spawning, we have to make this smaller over time.
-			if (Game::instance->score % secondsToSpawn == 0)
-				SpawnRandomObstacle();
-		}
+			SpawnRandomObstacle();
 		hasSpawnedThisScore = true;
 	}
 	else

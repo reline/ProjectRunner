@@ -42,7 +42,7 @@ void Thing::Destroy()
 void Thing::Render()
 {
 	// image.render(transform.position.x, transform.position.y, &Game::instance->camera);
-	image.render(transform.position.x, transform.position.y);
+	rect = image.render(transform.position.x, transform.position.y);
 
 	// SDL_Rect renderQuad = { transform.position.x, transform.position.y, image.getWidth(), image.getHeight() };
 	// SDL_RenderCopyEx( Game::instance->renderer, image.mTexture, &renderQuad, &Game::instance->camera, 0.0, 0, SDL_FLIP_NONE ); // maybe?

@@ -18,6 +18,19 @@ Player::Player(Transform transform, string filePath, int priority, uint initLane
 
 Player::~Player() { }
 
+void Player::Tick()
+{
+	Super::Tick();
+	for(auto &it : Thing::things)
+	{
+		for(Thing* thing : it.second)
+		{
+			if(SDL_HasIntersection(&rect, &thing->rect) && dynamic_cast<ConstantMovement*>(thing) != nullptr)
+				SDL_Log("Omg collision!");
+		}
+	}
+}
+
 void Player::moveLeft(int distance) // should i pass how much to move, or the screen width?
 {
 	// safety check

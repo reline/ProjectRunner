@@ -13,9 +13,13 @@ using std::vector;
 class Thing
 {
 private:
-		unsigned int thingIndex;
-		int priority;
+	unsigned int thingIndex;
+	int priority;
 public:
+
+	typedef Thing Super;
+
+	SDL_Rect rect;
 
 	static std::map<int, PackedDynamicArray<Thing*>> things;
 	// priority: 1 is rendered first (on bottom), 100 is rendered last (on top)

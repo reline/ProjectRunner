@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Thing.h"
+#include "ConstantMovement.h"
 
 #define LEFT 1
 #define CENTER 2
@@ -12,11 +13,10 @@ class Player : public Thing
 {
 public:
 	uint currentLane;
-
 	Player();
 	Player(Transform transform = Transform(), string filePath = "", int priority = 1, uint initLane = CENTER);
 	~Player();
-	// virtual void Tick() override;
+	void Tick() override;
 
 	// change lanes
 	void moveLeft(int screenWidth);

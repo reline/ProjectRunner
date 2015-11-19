@@ -20,6 +20,7 @@ public:
 	SDL_Rect camera;
 	unsigned long long frames;
 	int score;
+	int currentLives;
 
 	static void Init(char* name, Uint32 flags);
 	static void Render();

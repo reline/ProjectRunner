@@ -41,11 +41,17 @@ int main( int argc, char* args[] )
 	// Font Stuff
 	TTF_Font* Sans = TTF_OpenFont("52_hello_mobile/DroidSans.ttf", 24);
 
-	SDL_Rect Message_rect; //create a rect
-	Message_rect.x = 0;  //controls the rect's x coordinate 
-	Message_rect.y = 0; // controls the rect's y coordinte
-	Message_rect.w = 300; // controls the width of the rect
-	Message_rect.h = 100; // controls the height of the rect
+	SDL_Rect scoreRect; //create a rect
+	scoreRect.x = 0;  //controls the rect's x coordinate 
+	scoreRect.y = 0; // controls the rect's y coordinte
+	scoreRect.w = 300; // controls the width of the rect
+	scoreRect.h = 100; // controls the height of the rect
+
+	SDL_Rect lifeRect; //create a rect
+	lifeRect.x = screenWidth - 300;  //controls the rect's x coordinate 
+	lifeRect.y = 0; // controls the rect's y coordinte
+	lifeRect.w = 300; // controls the width of the rect
+	lifeRect.h = 100; // controls the height of the rect
 
 	// our player!
 	Player* player = new Player(
@@ -120,9 +126,12 @@ int main( int argc, char* args[] )
 		player->Render();
 
 
-		SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
-		SDL_Texture* Message = SDL_CreateTextureFromSurface(Game::instance->renderer, surfaceMessage);
-		SDL_RenderCopy(Game::instance->renderer, Message, NULL, &Message_rect);
+		SDL_Surface* scoreSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
+		SDL_Surface* playerLifeSurface = TTF_RenderText_Solid(Sans, ("Life: " + SSTR(Game::instance->currentLives)).c_str(), {255, 225, 255});
+		SDL_Texture* scoreTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, scoreSurface);
+		SDL_Texture* playerLifeTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, playerLifeSurface);
+		SDL_RenderCopy(Game::instance->renderer, scoreTexture, NULL, &scoreRect);
+		SDL_RenderCopy(Game::instance->renderer, playerLifeTexture, NULL, &lifeRect);
 
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);
