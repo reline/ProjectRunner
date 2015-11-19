@@ -1,6 +1,6 @@
 //Using SDL, standard IO, and, strings
 #include <SDL.h>
-#include </home/baladash/Android_Development/SDL2-2.0.3/android-project/jni/SDL2_ttf-2.0.12/SDL_ttf.h>
+#include <SDL_ttf.h>
 #include <stdio.h>
 #include <string>
 #include <string.h>

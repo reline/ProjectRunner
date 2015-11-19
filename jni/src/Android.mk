@@ -7,6 +7,7 @@ LOCAL_MODULE := main
 SDL_PATH := ../SDL2
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/jni/SDL2_ttf-2.0.12
 #LOCAL_C_INCLUDES := /usr/include/SDL2
 #LOCAL_C_INCLUDES := /usr/include
 
