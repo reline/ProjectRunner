@@ -4,6 +4,14 @@
 #include <stdio.h>
 #include <cstdlib>
 
+enum GameState
+{
+	isMainMenu,
+	isGamePlay,
+	isPaused,
+	isGameOver,
+};
+
 class Game
 {
 private:
@@ -20,7 +28,8 @@ public:
 	SDL_Rect camera;
 	unsigned long long frames;
 	int score;
-	int currentLives;
+	uint currentLives;
+	GameState gameState;
 
 	static void Init(char* name, Uint32 flags);
 	static void Render();

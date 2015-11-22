@@ -9,8 +9,18 @@
 
 using std::string;
 
+enum CollisionState
+{
+	NoCollision,
+	StartedCollision,
+	Overlapping,
+	EndedCollision
+};
+
 class Player : public Thing
 {
+private:
+	CollisionState collisionState;
 public:
 	uint currentLane;
 	Player();

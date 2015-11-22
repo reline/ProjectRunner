@@ -8,6 +8,7 @@ Player::Player()
 {
 	// our player normally starts in the center
 	this->currentLane = CENTER;
+	collisionState = CollisionState::NoCollision;
 }
 
 Player::Player(Transform transform, string filePath, int priority, uint initLane)
@@ -21,13 +22,31 @@ Player::~Player() { }
 void Player::Tick()
 {
 	Super::Tick();
+	bool foundCollision = false;
 	for(auto &it : Thing::things)
 	{
 		for(Thing* thing : it.second)
 		{
 			if(SDL_HasIntersection(&rect, &thing->rect) && dynamic_cast<ConstantMovement*>(thing) != nullptr)
-				SDL_Log("Omg collision!");
+			{
+				if(collisionState == CollisionState::NoCollision)
+				{
+					collisionState = CollisionState::StartedCollision;
+					Game::instance->currentLives--;
+				}
+				else if(collisionState == CollisionState::StartedCollision)
+					collisionState = CollisionState::Overlapping;
+				foundCollision = true;
+				break;
+			}
 		}
+	}
+	if(!foundCollision)
+	{
+		if(collisionState == CollisionState::Overlapping)
+			collisionState = CollisionState::EndedCollision;
+		else if(collisionState == CollisionState::EndedCollision)
+			collisionState = CollisionState::NoCollision;
 	}
 }
 

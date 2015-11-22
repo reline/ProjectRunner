@@ -46,6 +46,8 @@ Game::Game(char* name, Uint32 flags)
 	score = 0;
 	currentSecond = 0;
 	currentLives = 3;
+
+	gameState = GameState::isMainMenu;
 }
 
 Game::~Game()
