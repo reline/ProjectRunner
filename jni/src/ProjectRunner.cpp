@@ -44,29 +44,30 @@ int main( int argc, char* args[] )
 	SDL_Rect scoreRect; //create a rect
 	scoreRect.x = 0;  //controls the rect's x coordinate 
 	scoreRect.y = 0; // controls the rect's y coordinte
-	scoreRect.w = 300; // controls the width of the rect
-	scoreRect.h = 100; // controls the height of the rect
+	scoreRect.w = screenWidth / 5; // controls the width of the rect
+	scoreRect.h = screenHeight / 30; // controls the height of the rect
 
 	SDL_Rect lifeRect; //create a rect
-	lifeRect.x = screenWidth - 300;  //controls the rect's x coordinate 
+	lifeRect.x = screenWidth - (screenWidth / 7);  //controls the rect's x coordinate 
 	lifeRect.y = 0; // controls the rect's y coordinte
-	lifeRect.w = 300; // controls the width of the rect
-	lifeRect.h = 100; // controls the height of the rect
+	lifeRect.w = screenWidth / 7; // controls the width of the rect
+	lifeRect.h = screenHeight / 30; // controls the height of the rect
 
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
 		"52_hello_mobile/Player.bmp", 100, CENTER); // rendered last (100)
 
-	float middleLaneXCoord = (screenWidth - player->image.getWidth()) / 2;
-	float leftLaneXCoord = middleLaneXCoord - (screenWidth / 3);
-	float rightLaneXCoord = middleLaneXCoord + (screenWidth / 3);
+	// x coordinates for the center of each lane
+	float middleLaneXCoord = screenWidth / 2;
+	float leftLaneXCoord = screenWidth - (screenWidth * 5/6);
+	float rightLaneXCoord = screenWidth - (screenWidth / 6);
 
 	manager.lanes.push_back(Vector2(leftLaneXCoord, 0));
-	manager.lanes.push_back(Vector2(leftLaneXCoord, 0));
+	manager.lanes.push_back(Vector2(middleLaneXCoord, 0));
 	manager.lanes.push_back(Vector2(rightLaneXCoord, 0));
 
-	player->transform.position = Vector2(middleLaneXCoord, screenHeight - (player->image.getWidth() * 2));
+	player->transform.position = Vector2(middleLaneXCoord - (player->image.getWidth() / 2), screenHeight - (player->image.getWidth() * 2));
 
 	//Main loop flag
 	bool quit = false;
