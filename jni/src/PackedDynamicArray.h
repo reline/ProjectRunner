@@ -43,21 +43,17 @@ public:
 			Add(i);
 		length = other.length;
 		capacity = other.capacity;
-		SDL_Log("I've been copied");
 	}
 
 	PackedDynamicArray(uint initCapacity = 30) { 
-		SDL_Log("PDA constructing");
 		array = new T[initCapacity];
 		length = 0;
 		capacity = initCapacity;
-		SDL_Log("PDA constructed");
 	}
 
 	~PackedDynamicArray() { if(array != nullptr) delete [] array; }
 
 	uint Add(T value) {
-		SDL_Log("Adding value to PDA");
 		if(!emptySlots.empty()) {
 			uint pos = emptySlots.front();
 			array[pos] = value;
@@ -94,8 +90,10 @@ public:
 
 	void Display() {
 		for(uint i = 0; i < length; i++) {
-			std::cout << i << '\t' << array[i] << '\n';
+			// SDL_Log( i << '\t' << array[i] << '\n' );
+			SDL_Log("%d\t%d", i, array[i]);
 		}
+		SDL_Log("finished display");
 	}
 
 private:

@@ -27,6 +27,8 @@ void Player::Tick()
 	{
 		for(Thing* thing : it.second)
 		{
+			if(thing == nullptr)
+				continue;
 			if(SDL_HasIntersection(&rect, &thing->rect) && dynamic_cast<ConstantMovement*>(thing) != nullptr)
 			{
 				if(collisionState == CollisionState::NoCollision)

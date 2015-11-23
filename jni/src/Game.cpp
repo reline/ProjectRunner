@@ -57,7 +57,8 @@ Game::~Game()
 		// Iterate textures
 		for(Thing* thing : it.second)
 		{
-			thing->Destroy();
+			if(thing != nullptr)
+				thing->Destroy();
 		}
 	}
 	SDL_DestroyRenderer(renderer);
@@ -69,17 +70,36 @@ Game::~Game()
 
 void Game::Render()
 {
+	std::vector<Thing*> theDoomedOnes;
 	// Iterate texture lists in order of priority
 	for(auto &it : Thing::things)
 	{
 		// Iterate textures
 		for(Thing* thing : it.second)
 		{
+			if(thing == nullptr)
+				continue;
 			thing->Tick();
 			// Render texture
 			thing->Render();
+			if(thing->transform.position.y > Game::instance->screenRect.h)
+				theDoomedOnes.push_back(thing);
 		}
 	}
+	uint numberOfDoomedThings = theDoomedOnes.size();
+	for(uint i = 0; i < numberOfDoomedThings; i++)
+	{
+		if(theDoomedOnes[i] != nullptr)
+		{
+			theDoomedOnes[i]->Destroy();
+			SDL_Log("killed one");
+		}
+	}
+	// for(auto &it : Thing::things)
+	// {
+	// 	SDL_Log("displaying");
+	// 	it.second.Display();
+	// }
 }
 
 void Game::Tick()
