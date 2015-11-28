@@ -42,6 +42,8 @@ void Player::Tick()
 				break;
 			}
 		}
+		if(foundCollision)
+			break;
 	}
 	if(!foundCollision)
 	{

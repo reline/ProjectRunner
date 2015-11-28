@@ -23,7 +23,7 @@ void Spawner::SpawnRandomObstacle()
 
 void Spawner::Tick()
 {
-	if (Game::instance->score % 5 == 0)
+	if (Game::instance->score % 2 == 0)
 	{
 		if(!hasSpawnedThisScore)
 			SpawnRandomObstacle();

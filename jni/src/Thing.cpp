@@ -52,7 +52,7 @@ void Thing::Render()
 
 void Thing::Tick()
 {
-	Render();
+	// Render();
 }
 
 

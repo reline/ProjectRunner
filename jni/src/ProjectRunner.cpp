@@ -56,7 +56,7 @@ int main( int argc, char* args[] )
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
-		"52_hello_mobile/Player.bmp", 100, CENTER); // rendered last (100)
+		"52_hello_mobile/Player.bmp", 200, CENTER); // rendered last (100)
 
 	// x coordinates for the center of each lane
 	float middleLaneXCoord = screenWidth / 2;
@@ -77,6 +77,11 @@ int main( int argc, char* args[] )
 
 	//Touch variables
 	SDL_Point touchLocation = {screenWidth / 2, screenHeight / 2};
+
+	SDL_Surface* scoreSurface = nullptr;
+	SDL_Surface* playerLifeSurface = nullptr;
+	SDL_Texture* scoreTexture = nullptr;
+	SDL_Texture* playerLifeTexture = nullptr;
 
 	//While application is running
 	while(!quit)
@@ -124,13 +129,25 @@ int main( int argc, char* args[] )
 		SDL_RenderClear(Game::instance->renderer);
 		
 		Game::Tick();
-		player->Render();
+		// player->Render();
 
+		if(scoreSurface != nullptr)
+			// delete scoreSurface;
+			SDL_FreeSurface(scoreSurface);
+		if(playerLifeSurface != nullptr)
+			// delete playerLifeSurface;
+			SDL_FreeSurface(playerLifeSurface);
+		if(scoreTexture != nullptr)
+			// delete scoreTexture;
+			SDL_DestroyTexture(scoreTexture);
+		if(playerLifeTexture != nullptr)
+			// delete playerLifeTexture;
+			SDL_DestroyTexture(playerLifeTexture);
 
-		SDL_Surface* scoreSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
-		SDL_Surface* playerLifeSurface = TTF_RenderText_Solid(Sans, ("Life: " + SSTR(Game::instance->currentLives)).c_str(), {255, 225, 255});
-		SDL_Texture* scoreTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, scoreSurface);
-		SDL_Texture* playerLifeTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, playerLifeSurface);
+		scoreSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
+		playerLifeSurface = TTF_RenderText_Solid(Sans, ("Life: " + SSTR(Game::instance->currentLives)).c_str(), {255, 225, 255});
+		scoreTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, scoreSurface);
+		playerLifeTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, playerLifeSurface);
 		SDL_RenderCopy(Game::instance->renderer, scoreTexture, NULL, &scoreRect);
 		SDL_RenderCopy(Game::instance->renderer, playerLifeTexture, NULL, &lifeRect);
 
