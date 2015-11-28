@@ -34,7 +34,8 @@ int main( int argc, char* args[] )
 	int screenHeight = Game::instance->screenRect.h;
 
 	//Draw background to the screen
-	Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
+	Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
+	background->widthHeightOverride = &Game::instance->screenRect;
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 

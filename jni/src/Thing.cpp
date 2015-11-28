@@ -16,6 +16,7 @@ Thing::Thing(Transform transform, string path, int priority)
 	SDL_Log(("Setting priority to " + SSTR(priority)).c_str()); // Remove this line and all shall fail.
 	this->priority = priority;
 	thingIndex = things[priority].Add(this);
+	widthHeightOverride = NULL;
 }
 
 Thing::~Thing()
@@ -44,7 +45,7 @@ void Thing::Destroy()
 void Thing::Render()
 {
 	// image.render(transform.position.x, transform.position.y, &Game::instance->camera);
-	rect = image.render(transform.position.x, transform.position.y);
+	rect = image.render(transform.position.x, transform.position.y, widthHeightOverride);
 
 	// SDL_Rect renderQuad = { transform.position.x, transform.position.y, image.getWidth(), image.getHeight() };
 	// SDL_RenderCopyEx( Game::instance->renderer, image.mTexture, &renderQuad, &Game::instance->camera, 0.0, 0, SDL_FLIP_NONE ); // maybe?
