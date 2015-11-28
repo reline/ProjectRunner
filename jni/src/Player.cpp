@@ -15,6 +15,7 @@ Player::Player(Transform transform, string filePath, int priority, uint initLane
 	: Thing(transform, filePath, priority)
 {
 	this->currentLane = initLane;
+	collisionState = CollisionState::NoCollision;
 }
 
 Player::~Player() { }
@@ -35,6 +36,7 @@ void Player::Tick()
 				{
 					collisionState = CollisionState::StartedCollision;
 					Game::instance->currentLives--;
+					// SDL_Log("Removeing life");
 				}
 				else if(collisionState == CollisionState::StartedCollision)
 					collisionState = CollisionState::Overlapping;
@@ -52,6 +54,16 @@ void Player::Tick()
 		else if(collisionState == CollisionState::EndedCollision)
 			collisionState = CollisionState::NoCollision;
 	}
+	// if(collisionState == CollisionState::NoCollision)
+	// 	SDL_Log("Player State: NoCollision");
+	// else if(collisionState == CollisionState::StartedCollision)
+	// 	SDL_Log("Player State: StartedCollision");
+	// else if(collisionState == CollisionState::Overlapping)
+	// 	SDL_Log("Player State: Overlapping");
+	// else if(collisionState == CollisionState::EndedCollision)
+	// 	SDL_Log("Player State: EndedCollision");
+	// else
+	// 	SDL_Log("Player has some never heard of magical state: %d", collisionState);
 }
 
 void Player::moveLeft(int distance) // should i pass how much to move, or the screen width?
