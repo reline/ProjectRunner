@@ -6,8 +6,13 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.util.Log;
+
+import java.lang.String;
 
 public class MenuActivity extends Activity {
+
+    private static final String TAG = "MenuActivity";
 
     Button playButton;
 
@@ -21,6 +26,7 @@ public class MenuActivity extends Activity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "playButton");
                 Intent myIntent = new Intent(MenuActivity.this, GameActivity.class);
                 MenuActivity.this.startActivity(myIntent);
                 finish();

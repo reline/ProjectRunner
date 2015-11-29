@@ -48,7 +48,7 @@ void Spawner::Tick()
 	}
 	else
 		hasSpawnedThisScore = false;
-	if (obstacleSpeed <= maxSpeed)
+	if (obstacleSpeed.y <= maxSpeed)
 	{
 		if (Game::instance->score % 5 == 0)
 		{
