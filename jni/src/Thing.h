@@ -20,6 +20,7 @@ public:
 	typedef Thing Super;
 
 	SDL_Rect rect;
+	SDL_Rect* widthHeightOverride;
 
 	static std::map<int, PackedDynamicArray<Thing*>> things;
 	// priority: 1 is rendered first (on bottom), 100 is rendered last (on top)

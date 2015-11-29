@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include <stdio.h>
 #include <cstdlib>
 
@@ -42,7 +43,7 @@ void SDL_NullCheckPred(UnaryPredicate pred, char* msg)
 {
 	if(pred())
 	{
-		printf("%s SDL_Error: %s\n", msg, SDL_GetError());
+		SDL_Log("%s SDL_Error: %s\n", msg, SDL_GetError());
 		exit(EXIT_FAILURE);
 	}
 }
@@ -50,9 +51,9 @@ void SDL_NullCheckPred(UnaryPredicate pred, char* msg)
 template<class T>
 void SDL_NullCheck(T obj, char* msg)
 {
-	if(obj == NULL)
+	if(obj == NULL || obj == nullptr)
 	{
-		printf("%s SDL_Error: %s\n", msg, SDL_GetError());
+		SDL_Log("%s SDL_Error: %s\n", msg, SDL_GetError());
 		exit(EXIT_FAILURE);
 	}
 }

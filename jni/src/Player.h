@@ -2,6 +2,7 @@
 
 #include "Thing.h"
 #include "ConstantMovement.h"
+#include <SDL_mixer.h>
 
 #define LEFT 1
 #define CENTER 2
