@@ -96,9 +96,13 @@ int main( int argc, char* args[] )
 		while( SDL_PollEvent( &e ) != 0 )
 		{
 			//User requests quit
-			if( e.type == SDL_QUIT )
+			if( e.type == SDL_QUIT || Game::instance->currentLives == 0)
 			{
 				quit = true;
+				Mix_FreeChunk(manager.hurtSound);
+
+				//Free resources and close SDL
+				Game::Exit();
 			}
 			//Touch down
 			else if(e.type == SDL_FINGERDOWN)

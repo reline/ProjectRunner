@@ -1,3 +1,9 @@
+# view AndroidManifest.xml #generated:34
+-keep class com.tutorial.game.GameActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:37
+-keep class com.tutorial.game.GameOverActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:25
--keep class com.tutorial.game.HelloSDL2Activity { <init>(...); }
+-keep class com.tutorial.game.MenuActivity { <init>(...); }
 
