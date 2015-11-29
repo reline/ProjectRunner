@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "GameManager.h"
 
 #define LEFT 1
 #define CENTER 2
@@ -36,6 +37,7 @@ void Player::Tick()
 				{
 					collisionState = CollisionState::StartedCollision;
 					Game::instance->currentLives--;
+					Mix_PlayChannel( -1, GameManager::instance->hurtSound, 0 );
 					// SDL_Log("Removeing life");
 				}
 				else if(collisionState == CollisionState::StartedCollision)

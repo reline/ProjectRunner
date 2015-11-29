@@ -1,6 +1,7 @@
 //Using SDL, standard IO, and, strings
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <stdio.h>
 #include <string>
 #include <string.h>
@@ -32,6 +33,10 @@ int main( int argc, char* args[] )
 	// these seem to change within the game loop
 	int screenWidth = Game::instance->screenRect.w;
 	int screenHeight = Game::instance->screenRect.h;
+
+	manager.hurtSound = Mix_LoadWAV("52_hello_mobile/hurt.wav");
+	if(manager.hurtSound == nullptr)
+		SDL_Log("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 
 	//Draw background to the screen
 	Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
@@ -158,6 +163,8 @@ int main( int argc, char* args[] )
 
 	// middlePath->Destroy();
 	// rightPath->Destroy();
+
+	Mix_FreeChunk(manager.hurtSound);
 
 	//Free resources and close SDL
 	Game::Exit();

@@ -12,7 +12,8 @@ Game::Game(char* name, Uint32 flags)
 	}
 	
 	// Init video
-	SDL_NullCheckPred([&](void){return SDL_Init(SDL_INIT_VIDEO) < 0;}, "SDL_Init failed.");
+	SDL_NullCheckPred([&](void){return SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0;}, "SDL_Init failed.");
+	SDL_NullCheckPred([&](void){return Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0;}, "Mix_OpenAudio failed.");
 
 	//Set texture filtering to linear
 	if(!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ))
