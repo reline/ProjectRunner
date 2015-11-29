@@ -92,7 +92,7 @@ void Game::Render()
 		if(theDoomedOnes[i] != nullptr)
 		{
 			theDoomedOnes[i]->Destroy();
-			SDL_Log("killed one");
+			//SDL_Log("killed one");
 		}
 	}
 	// for(auto &it : Thing::things)

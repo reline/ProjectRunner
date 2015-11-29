@@ -22,11 +22,11 @@ Thing::~Thing()
 { 
 	// Dealocate other things
 	image.free();
-	SDL_Log("image removed");
+	//SDL_Log("image removed");
 	// Remove from list
 	// things.RemoveAt(thingIndex);
 	things[priority].RemoveAt(thingIndex);
-	SDL_Log("thing removed from PDA");
+	//SDL_Log("thing removed from PDA");
 }
 
 Thing* Thing::Spawn(Transform transform, string path, int priority)
@@ -37,7 +37,7 @@ Thing* Thing::Spawn(Transform transform, string path, int priority)
 
 void Thing::Destroy()
 {
-	SDL_Log("yup");
+	//SDL_Log("yup");
 	delete this;
 }
 

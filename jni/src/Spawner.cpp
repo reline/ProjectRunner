@@ -5,7 +5,12 @@ Spawner::Spawner(Transform transform)
 {
 	srand(time(0));
 	hasSpawnedThisScore = false;
+	hasIncreasedSpeed = false;
 	obstacleSpeed = Vector2(0,5);
+	maxSpeed = 30;
+	obstacleSpawnTime = 2;
+	currentSpawnTime = 0;
+	spawnTimeSubtractor = 1;
 }
 
 Vector2& Spawner::GetRandomLane()
@@ -23,12 +28,35 @@ void Spawner::SpawnRandomObstacle()
 
 void Spawner::Tick()
 {
-	if (Game::instance->score % 2 == 0)
+	if (obstacleSpawnTime == 1 && currentSpawnTime != Game::instance->score)
+	{
+		SpawnRandomObstacle();
+		currentSpawnTime = Game::instance->score;
+	}
+	if (obstacleSpawnTime != 1 && Game::instance->score % obstacleSpawnTime == 0)
 	{
 		if(!hasSpawnedThisScore)
+		{
 			SpawnRandomObstacle();
+			if (Game::instance->score % 30 == 0 && obstacleSpawnTime > 1 && Game::instance->score != 0)
+			{
+				obstacleSpawnTime = obstacleSpawnTime - spawnTimeSubtractor;
+				currentSpawnTime = Game::instance->score;
+			}
+		}
 		hasSpawnedThisScore = true;
 	}
 	else
 		hasSpawnedThisScore = false;
+	if (obstacleSpeed <= maxSpeed)
+	{
+		if (Game::instance->score % 5 == 0)
+		{
+			if (!hasIncreasedSpeed)
+				obstacleSpeed.y++;
+			hasIncreasedSpeed = true;
+		}
+		else 
+			hasIncreasedSpeed = false;
+	}
 }

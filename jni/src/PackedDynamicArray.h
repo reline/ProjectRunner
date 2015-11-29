@@ -37,7 +37,7 @@ public:
 	T* end() const { return &(array[length]); }
 
 	PackedDynamicArray(PackedDynamicArray<T> const& other) {
-		SDL_Log("Oh my");
+		//SDL_Log("Oh my");
 		array = new T[other.capacity];
 		for(T i : other)
 			Add(i);
