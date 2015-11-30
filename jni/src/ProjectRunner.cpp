@@ -92,6 +92,11 @@ int main( int argc, char* args[] )
 	//While application is running
 	while(!quit)
 	{
+		if(Game::instance->currentLives == 0)
+		{
+			quit = true;
+			break;
+		}
 		//Handle events on queue
 		while( SDL_PollEvent( &e ) != 0 )
 		{
@@ -99,10 +104,7 @@ int main( int argc, char* args[] )
 			if( e.type == SDL_QUIT || Game::instance->currentLives == 0)
 			{
 				quit = true;
-				Mix_FreeChunk(manager.hurtSound);
-
-				//Free resources and close SDL
-				Game::Exit();
+				break;
 			}
 			//Touch down
 			else if(e.type == SDL_FINGERDOWN)

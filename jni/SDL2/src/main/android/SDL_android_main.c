@@ -35,6 +35,11 @@ void Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jclass cls, jobject
     /* exit(status); */
 }
 
+jstring Java_com_tutorial_game_GameActivity_stringFromJNI(JNIEnv* env, /*jclass cls,*/ jobject obj)
+{
+    return (*env)->NewStringUTF(env, "Hello world");
+}
+
 #endif /* __ANDROID__ */
 
 /* vi: set ts=4 sw=4 expandtab: */

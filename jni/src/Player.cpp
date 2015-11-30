@@ -39,8 +39,6 @@ void Player::Tick()
 					Game::instance->currentLives--;
 					Mix_PlayChannel( -1, GameManager::instance->hurtSound, 0 );
 					// SDL_Log("Removeing life");
-					if(Game::instance->currentLives <= 0)
-						Game::Exit();
 				}
 				else if(collisionState == CollisionState::StartedCollision)
 					collisionState = CollisionState::Overlapping;
