@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Thing.h"
+#include "../SDL2/src/main/android/SDL_android_main.h"
 
 Game* Game::instance = nullptr;
 
@@ -10,6 +11,9 @@ Game::Game(char* name, Uint32 flags)
 		printf("Two games at once? Are you crazy?\n");
 		exit(EXIT_FAILURE);
 	}
+
+	playerLives = &currentLives;
+	currentScore = &score;
 	
 	// Init video
 	SDL_NullCheckPred([&](void){return SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0;}, "SDL_Init failed.");

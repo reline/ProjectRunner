@@ -29,7 +29,7 @@ public:
 	SDL_Rect camera;
 	unsigned long long frames;
 	int score;
-	uint currentLives;
+	int currentLives;
 	GameState gameState;
 
 	static void Init(char* name, Uint32 flags);

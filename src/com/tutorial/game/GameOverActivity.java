@@ -6,13 +6,18 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.util.Log;
 //import android.widget.TextView;
 
+import java.lang.Integer;
 import java.lang.String;
 
 public class GameOverActivity extends Activity {
 
-    Button continueButton;
+    private static final String TAG = "GameOverActivity";
+
+    private Button continueButton;
+    private int score;
     //TextView scoreText;
 
     @Override
@@ -20,6 +25,9 @@ public class GameOverActivity extends Activity {
         super.onCreate(savedInstanceState);
         //this.requestWindowFeature(Window.FEATURE_NO_TITLE); // remove title bar
         setContentView(R.layout.activity_gameover);
+
+        score = getIntent().getExtras().getInt("SCORE");
+        Log.d(TAG, Integer.toString(score));
 
         continueButton = (Button) findViewById(R.id.continueButton);
         continueButton.setOnClickListener(new View.OnClickListener() {

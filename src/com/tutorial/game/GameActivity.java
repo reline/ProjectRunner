@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.util.Log;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.AsyncTask;
 
+import java.lang.Integer;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.System;
@@ -20,17 +23,38 @@ public class GameActivity extends SDLActivity
     }
 
     // define native functions in jni/SDL2/src/main/android/SDL_android_main.c
-    public static native String stringFromJNI();
+    public static native int currentLives();
+    public static native int currentScore();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, stringFromJNI());
 
-        // if player lives == 0, push the score to a new intent
-        /*Intent myIntent = new Intent(GameActivity.this, GameOverActivity.class);
-        myIntent.putExtra("SCORE", SCORE);
-        GameActivity.this.startActivity(myIntent);*/
+        LifeCheck lifeCheck = new LifeCheck();
+        lifeCheck.execute(0);
+    }
+
+    public class LifeCheck extends AsyncTask<Integer, Integer, Integer> {
+
+        @Override
+        protected Integer doInBackground(Integer... number) {
+            while(true) {
+                Log.d(TAG, "currentLives: " + Integer.toString(currentLives()));
+                if(currentLives() == 0) {
+                    Log.d(TAG, "YOU ARE SO TOTALLY DEAD: " + Integer.toString(currentLives()));
+                    return currentScore();
+                }
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Integer currentScore) {
+            Intent myIntent = new Intent(GameActivity.this, GameOverActivity.class);
+            myIntent.putExtra("SCORE", currentScore);
+            GameActivity.this.startActivity(myIntent);
+            finish();
+        }
+
     }
 }
 

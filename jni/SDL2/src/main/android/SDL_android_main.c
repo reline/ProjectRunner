@@ -2,6 +2,7 @@
     SDL_android_main.c, placed in the public domain by Sam Lantinga  3/13/14
 */
 #include "../../SDL_internal.h"
+#include "SDL_android_main.h"
 
 #ifdef __ANDROID__
 
@@ -35,9 +36,18 @@ void Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jclass cls, jobject
     /* exit(status); */
 }
 
-jstring Java_com_tutorial_game_GameActivity_stringFromJNI(JNIEnv* env, /*jclass cls,*/ jobject obj)
+int* Java_com_tutorial_game_GameActivity_currentLives(JNIEnv* env, /*jclass cls,*/ jobject obj)
 {
-    return (*env)->NewStringUTF(env, "Hello world");
+    if(playerLives == NULL) {
+        return 1;
+    }
+
+    return *playerLives;
+}
+
+int* Java_com_tutorial_game_GameActivity_currentScore(JNIEnv* env, /*jclass cls,*/ jobject obj)
+{
+    return *currentScore;
 }
 
 #endif /* __ANDROID__ */
