@@ -41,8 +41,9 @@ int main( int argc, char* args[] )
 		SDL_Log("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 
 	//Draw background to the screen
-	Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
-	background->widthHeightOverride = &Game::instance->screenRect;
+	// Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
+	// SDL_Rect backgroundRect = { 0, 0, Game::instance->screenRect.w, Game::instance->screenRect.h };
+	// background->widthHeightOverride = &backgroundRect;
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
@@ -181,7 +182,15 @@ int main( int argc, char* args[] )
 			//Clear screen
 			SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(Game::instance->renderer);
-			
+
+			SDL_Rect fillRect = { (screenWidth / 3) - (screenWidth / 20), 0, screenWidth / 20, screenHeight };
+	        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
+	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
+
+	        fillRect = { (screenWidth / 3) * 2, 0, screenWidth / 20, screenHeight };
+	        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
+	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
+
 			Game::Tick();
 			// player->Render();
 
@@ -208,9 +217,10 @@ int main( int argc, char* args[] )
 			//Update screen
 			SDL_RenderPresent(Game::instance->renderer);
 		}
-		//Clear screen
-		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		//Clear screen for GameOver Screen
+		SDL_SetRenderDrawColor(Game::instance->renderer, 0x00, 0x00, 0x00, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
+
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);	
 		
@@ -254,8 +264,6 @@ void reset()
 	Game::instance->frames = 0;
 	Game::instance->score = 0;
 
-	SDL_Log("reset the player");
-
 	// reset the player
 	//delete Player::instance;
 	Player::instance = new Player(
@@ -263,8 +271,6 @@ void reset()
 		"52_hello_mobile/Player.bmp", 200, CENTER); // rendered last (100)
 	Player::instance->transform.position = Vector2(Game::instance->screenRect.w / 2 - (Player::instance->image.getWidth() / 2), 
 													Game::instance->screenRect.h - (Player::instance->image.getWidth() * 2));
-
-	SDL_Log("reset the spawner");
 	// reset the spawner
 	//delete Spawner::instance;
 	Spawner::instance = new Spawner(Transform(Vector2(0,1)));
