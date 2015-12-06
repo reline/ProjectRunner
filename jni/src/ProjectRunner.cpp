@@ -39,8 +39,9 @@ int main( int argc, char* args[] )
 		SDL_Log("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 
 	//Draw background to the screen
-	Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
-	background->widthHeightOverride = &Game::instance->screenRect;
+	// Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
+	// SDL_Rect backgroundRect = { 0, 0, Game::instance->screenRect.w, Game::instance->screenRect.h };
+	// background->widthHeightOverride = &backgroundRect;
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
@@ -137,8 +138,16 @@ int main( int argc, char* args[] )
 		}
 
 		//Clear screen
-		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_SetRenderDrawColor(Game::instance->renderer, 0x00, 0x00, 0x00, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
+
+		SDL_Rect fillRect = { (screenWidth / 3) - (screenWidth / 20), 0, screenWidth / 20, screenHeight };
+        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
+        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
+
+        fillRect = { (screenWidth / 3) * 2, 0, screenWidth / 20, screenHeight };
+        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
+        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
 		
 		Game::Tick();
 		// player->Render();
