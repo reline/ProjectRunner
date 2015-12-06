@@ -183,13 +183,14 @@ int main( int argc, char* args[] )
 			SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(Game::instance->renderer);
 
-			SDL_Rect fillRect = { (screenWidth / 3) - (screenWidth / 20), 0, screenWidth / 20, screenHeight };
+			// breakin stuff, oh yeah
+			/*SDL_Rect fillRect = { (screenWidth / 3) - (screenWidth / 20), 0, screenWidth / 20, screenHeight };
 	        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
 	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
 
 	        fillRect = { (screenWidth / 3) * 2, 0, screenWidth / 20, screenHeight };
 	        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
-	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
+	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );*/
 
 			Game::Tick();
 			// player->Render();
@@ -274,4 +275,7 @@ void reset()
 	// reset the spawner
 	//delete Spawner::instance;
 	Spawner::instance = new Spawner(Transform(Vector2(0,1)));
+
+	// reset the sound for the manager
+	GameManager::instance->hurtSound = Mix_LoadWAV("52_hello_mobile/hurt.wav");
 }
