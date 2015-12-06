@@ -23,6 +23,8 @@
 
 #define SSTR(x) dynamic_cast<std::ostringstream&>((std::ostringstream() << std::dec << x)).str()
 
+void reset();
+
 int main( int argc, char* args[] )
 {
 	//Start up SDL and create window
@@ -89,91 +91,181 @@ int main( int argc, char* args[] )
 	SDL_Texture* scoreTexture = nullptr;
 	SDL_Texture* playerLifeTexture = nullptr;
 
-	//While application is running
+
+	/** APPLICATION LOOP **/
 	while(!quit)
 	{
-		if(Game::instance->currentLives == 0)
+
+		/** MAIN MENU LOOP **/
+		while(Game::instance->gameState == isMainMenu)
 		{
-			quit = true;
-			break;
-		}
-		//Handle events on queue
-		while( SDL_PollEvent( &e ) != 0 )
-		{
-			//User requests quit
-			if( e.type == SDL_QUIT || Game::instance->currentLives == 0)
+			while(SDL_PollEvent(&e) != 0)
 			{
-				quit = true;
-				break;
-			}
-			//Touch down
-			else if(e.type == SDL_FINGERDOWN)
-			{
-				touchLocation.x = e.tfinger.x * screenWidth;
-				touchLocation.y = e.tfinger.y * screenHeight;
-				// move our player towards the clicked lane
-				if(touchLocation.x < player->transform.position.x)
+				// todo: draw our 'play' button
+				//User requests quit
+				if( e.type == SDL_QUIT)
 				{
-					player->moveLeft(screenWidth/3);
+					//quit = true;
+					break;
 				}
-				else if(touchLocation.x > player->transform.position.x + player->image.getWidth())
+				//Touch down
+				else if(e.type == SDL_FINGERDOWN)
 				{
-					player->moveRight(screenWidth/3);
+					// todo: if button clicked...
+					Game::instance->gameState = isGamePlay;
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;					
 				}
-			}
-			//Touch motion
-			else if(e.type == SDL_FINGERMOTION)
-			{
-				touchLocation.x = e.tfinger.x * screenWidth;
-				touchLocation.y = e.tfinger.y * screenHeight;
-				// todo: turn our player to the gestured direction
-			}
-			//Touch release
-			else if(e.type == SDL_FINGERUP)
-			{
-				touchLocation.x = e.tfinger.x * screenWidth;
-				touchLocation.y = e.tfinger.y * screenHeight;
+				//Touch motion
+				else if(e.type == SDL_FINGERMOTION)
+				{
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;
+				}
+				//Touch release
+				else if(e.type == SDL_FINGERUP)
+				{
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;
+				}
 			}
 		}
 
+		/** GAME LOOP **/
+		while(Game::instance->gameState == isGamePlay)
+		{
+			if(Game::instance->currentLives == 0)
+			{
+				Game::instance->gameState = isGameOver;
+				break;
+			}
+			//Handle events on queue
+			while( SDL_PollEvent( &e ) != 0 )
+			{
+				//User requests quit
+				if( e.type == SDL_QUIT)
+				{
+					//quit = true;
+					break;
+				}
+				//Touch down
+				else if(e.type == SDL_FINGERDOWN)
+				{
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;
+					// move our player towards the clicked lane
+					if(touchLocation.x < player->transform.position.x)
+					{
+						player->moveLeft(screenWidth/3);
+					}
+					else if(touchLocation.x > player->transform.position.x + player->image.getWidth())
+					{
+						player->moveRight(screenWidth/3);
+					}
+				}
+				//Touch motion
+				else if(e.type == SDL_FINGERMOTION)
+				{
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;
+					// todo: turn our player to the gestured direction
+				}
+				//Touch release
+				else if(e.type == SDL_FINGERUP)
+				{
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;
+				}
+			}
+
+			//Clear screen
+			SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+			SDL_RenderClear(Game::instance->renderer);
+			
+			Game::Tick();
+			// player->Render();
+
+			if(scoreSurface != nullptr)
+				// delete scoreSurface;
+				SDL_FreeSurface(scoreSurface);
+			if(playerLifeSurface != nullptr)
+				// delete playerLifeSurface;
+				SDL_FreeSurface(playerLifeSurface);
+			if(scoreTexture != nullptr)
+				// delete scoreTexture;
+				SDL_DestroyTexture(scoreTexture);
+			if(playerLifeTexture != nullptr)
+				// delete playerLifeTexture;
+				SDL_DestroyTexture(playerLifeTexture);
+
+			scoreSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
+			playerLifeSurface = TTF_RenderText_Solid(Sans, ("Life: " + SSTR(Game::instance->currentLives)).c_str(), {255, 225, 255});
+			scoreTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, scoreSurface);
+			playerLifeTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, playerLifeSurface);
+			SDL_RenderCopy(Game::instance->renderer, scoreTexture, NULL, &scoreRect);
+			SDL_RenderCopy(Game::instance->renderer, playerLifeTexture, NULL, &lifeRect);
+
+			//Update screen
+			SDL_RenderPresent(Game::instance->renderer);
+		}
 		//Clear screen
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
-		
-		Game::Tick();
-		// player->Render();
-
-		if(scoreSurface != nullptr)
-			// delete scoreSurface;
-			SDL_FreeSurface(scoreSurface);
-		if(playerLifeSurface != nullptr)
-			// delete playerLifeSurface;
-			SDL_FreeSurface(playerLifeSurface);
-		if(scoreTexture != nullptr)
-			// delete scoreTexture;
-			SDL_DestroyTexture(scoreTexture);
-		if(playerLifeTexture != nullptr)
-			// delete playerLifeTexture;
-			SDL_DestroyTexture(playerLifeTexture);
-
-		scoreSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
-		playerLifeSurface = TTF_RenderText_Solid(Sans, ("Life: " + SSTR(Game::instance->currentLives)).c_str(), {255, 225, 255});
-		scoreTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, scoreSurface);
-		playerLifeTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, playerLifeSurface);
-		SDL_RenderCopy(Game::instance->renderer, scoreTexture, NULL, &scoreRect);
-		SDL_RenderCopy(Game::instance->renderer, playerLifeTexture, NULL, &lifeRect);
-
 		//Update screen
-		SDL_RenderPresent(Game::instance->renderer);
+		SDL_RenderPresent(Game::instance->renderer);	
+		
+		Mix_FreeChunk(manager.hurtSound);
+
+		//Free resources
+		Game::Exit();
+
+		/** GAMEOVER LOOP **/
+		while(Game::instance->gameState == isGameOver)
+		{
+			while(SDL_PollEvent(&e) != 0)
+			{
+				// todo: draw our 'continue' and 'play again' buttons
+				//User requests quit
+				if( e.type == SDL_QUIT)
+				{
+					//quit = true;
+					break;
+				}
+				//Touch down
+				else if(e.type == SDL_FINGERDOWN)
+				{
+					// todo: if button clicked...
+					reset();
+					Game::instance->gameState = isMainMenu;
+					touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;					
+				}
+			}
+		}
+		
 	}
-
-	// middlePath->Destroy();
-	// rightPath->Destroy();
-
-	Mix_FreeChunk(manager.hurtSound);
-
-	//Free resources and close SDL
-	Game::Exit();
-
 	return 0;
+}
+
+void reset()
+{
+	// reset player's health, ticks, score
+	Game::instance->currentLives = 3;
+	Game::instance->frames = 0;
+	Game::instance->score = 0;
+
+	SDL_Log("reset the player");
+
+	// reset the player
+	//delete Player::instance;
+	Player::instance = new Player(
+		Transform(Vector2()),
+		"52_hello_mobile/Player.bmp", 200, CENTER); // rendered last (100)
+	Player::instance->transform.position = Vector2(Game::instance->screenRect.w / 2 - (Player::instance->image.getWidth() / 2), 
+													Game::instance->screenRect.h - (Player::instance->image.getWidth() * 2));
+
+	SDL_Log("reset the spawner");
+	// reset the spawner
+	//delete Spawner::instance;
+	Spawner::instance = new Spawner(Transform(Vector2(0,1)));
 }

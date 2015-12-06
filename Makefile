@@ -4,10 +4,11 @@ all:
 	@echo "Building..."
 	@ant debug
 	@echo "done"
+
 install:
 	@echo "Compiling..."
 	@ndk-build
-	@echo "Bulding and installing..."
+	@echo "Building and installing..."
 	@ant debug install
 	@echo "done"
 

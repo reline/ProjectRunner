@@ -53,7 +53,7 @@ Game::Game(char* name, Uint32 flags)
 
 Game::~Game()
 {
-	for(auto &it : Thing::things)
+	/*for(auto &it : Thing::things)
 	{
 		// Iterate textures
 		for(Thing* thing : it.second)
@@ -61,10 +61,10 @@ Game::~Game()
 			if(thing != nullptr)
 				thing->Destroy();
 		}
-	}
-	SDL_DestroyRenderer(renderer);
+	}*/
+	/*SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
-	SDL_Quit();
+	SDL_Quit();*/
 	printf("Game over man! Game over!\n");
 	exit(0);
 }
@@ -123,5 +123,14 @@ void Game::Init(char* name, Uint32 flags)
 
 void Game::Exit()
 {
-	delete instance;
+	// delete instance;
+	for(auto &it : Thing::things)
+	{
+		// Iterate textures
+		for(Thing* thing : it.second)
+		{
+			if(thing != nullptr)
+				thing->Destroy();
+		}
+	}
 }

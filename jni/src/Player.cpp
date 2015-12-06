@@ -5,11 +5,14 @@
 #define CENTER 2
 #define RIGHT 3
 
+Player* Player::instance = nullptr;
+
 Player::Player()
 {
 	// our player normally starts in the center
 	this->currentLane = CENTER;
 	collisionState = CollisionState::NoCollision;
+	instance = this;
 }
 
 Player::Player(Transform transform, string filePath, int priority, uint initLane)
@@ -17,6 +20,7 @@ Player::Player(Transform transform, string filePath, int priority, uint initLane
 {
 	this->currentLane = initLane;
 	collisionState = CollisionState::NoCollision;
+	instance = this;
 }
 
 Player::~Player() { }

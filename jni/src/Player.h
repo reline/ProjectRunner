@@ -23,6 +23,7 @@ class Player : public Thing
 private:
 	CollisionState collisionState;
 public:
+	static Player* instance;
 	uint currentLane;
 	Player();
 	Player(Transform transform = Transform(), string filePath = "", int priority = 1, uint initLane = CENTER);

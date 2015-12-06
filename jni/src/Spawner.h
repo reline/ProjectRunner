@@ -22,6 +22,8 @@ private:
 	std::vector<ConstantMovement> obstacles;
 
 public:
+	static Spawner* instance;
+
 	Spawner(Transform transform = Transform());
 
 	void Tick() override;

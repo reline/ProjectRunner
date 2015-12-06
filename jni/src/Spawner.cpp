@@ -1,5 +1,7 @@
 #include "Spawner.h"
 
+Spawner* Spawner::instance = nullptr;
+
 Spawner::Spawner(Transform transform)
 	: Thing(transform)
 {
@@ -11,6 +13,7 @@ Spawner::Spawner(Transform transform)
 	obstacleSpawnTime = 2;
 	currentSpawnTime = 0;
 	spawnTimeSubtractor = 1;
+	instance = this;
 }
 
 Vector2& Spawner::GetRandomLane()
