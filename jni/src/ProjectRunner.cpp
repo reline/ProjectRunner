@@ -124,7 +124,7 @@ int main( int argc, char* args[] )
 				//User requests quit
 				if( e.type == SDL_QUIT)
 				{
-					//quit = true;
+					quit = true;
 					break;
 				}
 				//Touch down
@@ -164,7 +164,7 @@ int main( int argc, char* args[] )
 				//User requests quit
 				if( e.type == SDL_QUIT)
 				{
-					//quit = true;
+					quit = true;
 					break;
 				}
 				//Touch down
@@ -198,7 +198,7 @@ int main( int argc, char* args[] )
 			}
 
 			//Clear screen
-			SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+			SDL_SetRenderDrawColor(Game::instance->renderer, 0x00, 0x00, 0x00, 0x00);
 			SDL_RenderClear(Game::instance->renderer);
 
 			// breakin stuff, oh yeah
@@ -261,7 +261,7 @@ int main( int argc, char* args[] )
 				//User requests quit
 				if( e.type == SDL_QUIT)
 				{
-					//quit = true;
+					quit = true;
 					break;
 				}
 				//Touch down
