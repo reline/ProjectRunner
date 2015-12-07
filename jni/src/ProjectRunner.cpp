@@ -155,7 +155,7 @@ int main( int argc, char* args[] )
 		{
 			if(Game::instance->currentLives == 0)
 			{
-				Game::instance->gameState = isGameOver;
+				Game::instance->gameState = isMainMenu;
 				break;
 			}
 			//Handle events on queue
@@ -251,6 +251,8 @@ int main( int argc, char* args[] )
 
 		//Free resources
 		Game::Exit();
+
+		reset();
 
 		/** GAMEOVER LOOP **/
 		while(Game::instance->gameState == isGameOver)
