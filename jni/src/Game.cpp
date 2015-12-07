@@ -107,7 +107,7 @@ void Game::Tick()
 {
 	instance->frames++;
 	instance->currentSecond++;
-	if (instance->currentSecond == 60)
+	if (instance->currentSecond == 60 && instance->gameState == isGamePlay)
 	{
 		instance->score++;
 		instance->currentSecond = 0;

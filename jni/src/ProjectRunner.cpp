@@ -62,6 +62,12 @@ int main( int argc, char* args[] )
 	lifeRect.w = screenWidth / 7; // controls the width of the rect
 	lifeRect.h = screenHeight / 30; // controls the height of the rect
 
+	SDL_Rect gameOverRect; //create a rect
+	gameOverRect.w = screenWidth / 5; // controls the width of the rect
+	gameOverRect.h = screenHeight / 30; // controls the height of the rect
+	gameOverRect.x = screenWidth / 2 - gameOverRect.w / 2;  //controls the rect's x coordinate 
+	gameOverRect.y = screenHeight / 2 - gameOverRect.h / 2; // controls the rect's y coordinte
+
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
@@ -89,8 +95,10 @@ int main( int argc, char* args[] )
 
 	SDL_Surface* scoreSurface = nullptr;
 	SDL_Surface* playerLifeSurface = nullptr;
+	SDL_Surface* gameOverSurface = nullptr;
 	SDL_Texture* scoreTexture = nullptr;
 	SDL_Texture* playerLifeTexture = nullptr;
+	SDL_Texture* gameOverTexture = nullptr;
 
 
 	/** APPLICATION LOOP **/
@@ -222,6 +230,10 @@ int main( int argc, char* args[] )
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0x00, 0x00, 0x00, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
 
+		gameOverSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
+		gameOverTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, gameOverSurface);
+		SDL_RenderCopy(Game::instance->renderer, gameOverTexture, NULL, &gameOverRect); // freezes player
+
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);	
 		
@@ -248,10 +260,11 @@ int main( int argc, char* args[] )
 					// todo: if button clicked...
 					reset();
 					Game::instance->gameState = isMainMenu;
-					touchLocation.x = e.tfinger.x * screenWidth;
-					touchLocation.y = e.tfinger.y * screenHeight;					
+					/*touchLocation.x = e.tfinger.x * screenWidth;
+					touchLocation.y = e.tfinger.y * screenHeight;*/					
 				}
 			}
+
 		}
 		
 	}
@@ -278,4 +291,10 @@ void reset()
 
 	// reset the sound for the manager
 	GameManager::instance->hurtSound = Mix_LoadWAV("52_hello_mobile/hurt.wav");
+
+	// clear screen
+	SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+	SDL_RenderClear(Game::instance->renderer);
+	// update screen
+	SDL_RenderPresent(Game::instance->renderer);
 }
