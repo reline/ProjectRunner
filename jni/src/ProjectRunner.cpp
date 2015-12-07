@@ -104,6 +104,16 @@ int main( int argc, char* args[] )
 	/** APPLICATION LOOP **/
 	while(!quit)
 	{
+		//Clear screen for main menu Screen
+		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_RenderClear(Game::instance->renderer);
+
+		gameOverSurface = TTF_RenderText_Solid(Sans, "Click to play!", {0, 0, 0});
+		gameOverTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, gameOverSurface);
+		SDL_RenderCopy(Game::instance->renderer, gameOverTexture, NULL, &gameOverRect);
+
+		//Update screen
+		SDL_RenderPresent(Game::instance->renderer);
 
 		/** MAIN MENU LOOP **/
 		while(Game::instance->gameState == isMainMenu)
@@ -232,7 +242,7 @@ int main( int argc, char* args[] )
 
 		gameOverSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
 		gameOverTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, gameOverSurface);
-		SDL_RenderCopy(Game::instance->renderer, gameOverTexture, NULL, &gameOverRect); // freezes player
+		SDL_RenderCopy(Game::instance->renderer, gameOverTexture, NULL, &gameOverRect);
 
 		//Update screen
 		SDL_RenderPresent(Game::instance->renderer);	
@@ -259,14 +269,11 @@ int main( int argc, char* args[] )
 				{
 					// todo: if button clicked...
 					reset();
-					Game::instance->gameState = isMainMenu;
-					/*touchLocation.x = e.tfinger.x * screenWidth;
-					touchLocation.y = e.tfinger.y * screenHeight;*/					
+					Game::instance->gameState = isMainMenu;				
 				}
 			}
 
-		}
-		
+		}		
 	}
 	return 0;
 }
