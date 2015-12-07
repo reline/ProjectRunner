@@ -155,7 +155,7 @@ int main( int argc, char* args[] )
 		{
 			if(Game::instance->currentLives == 0)
 			{
-				Game::instance->gameState = isMainMenu;
+				Game::instance->gameState = isGameOver;
 				break;
 			}
 			//Handle events on queue
@@ -259,23 +259,18 @@ int main( int argc, char* args[] )
 		{
 			while(SDL_PollEvent(&e) != 0)
 			{
-				// todo: draw our 'continue' and 'play again' buttons
-				//User requests quit
-				if( e.type == SDL_QUIT)
+				if(e.type == SDL_FINGERDOWN)
 				{
-					quit = true;
-					break;
-				}
-				//Touch down
-				else if(e.type == SDL_FINGERDOWN)
-				{
-					// todo: if button clicked...
-					reset();
 					Game::instance->gameState = isMainMenu;				
 				}
 			}
 
-		}		
+		}
+		// clear screen
+		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_RenderClear(Game::instance->renderer);
+		// update screen
+		SDL_RenderPresent(Game::instance->renderer);	
 	}
 	return 0;
 }
@@ -301,9 +296,9 @@ void reset()
 	// reset the sound for the manager
 	GameManager::instance->hurtSound = Mix_LoadWAV("52_hello_mobile/hurt.wav");
 
-	// clear screen
+	/*// clear screen
 	SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(Game::instance->renderer);
 	// update screen
-	SDL_RenderPresent(Game::instance->renderer);
+	SDL_RenderPresent(Game::instance->renderer);*/
 }
