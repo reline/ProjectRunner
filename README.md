@@ -8,13 +8,13 @@ Android NDK
 
 Apache Ant
 
-Android SDK Manager:
+Android SDK Manager
 
-	Android 4.0.3:
+->Android 4.0.3
 
-		SDK Platform
+->->SDK Platform
 
-		* System Images (<- recommended)
+->->->* System Images (<- recommended)
 
 Make sure the NDK, Ant, and AndroidSDK-platform-tools are in you Path environment variable (example: C:\AndroidDevelopment\android-ndk-r10e;C:\AndroidDevelopment\apache-ant-1.9.6\bin;C:\AndroidSDK\platform-tools)
 
@@ -30,6 +30,9 @@ OR
 `make install`
 
 in the root folder
+
+## SDL main source code
+/jni/src
 
 ## Libraries
 SDL2
