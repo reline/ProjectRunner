@@ -25,7 +25,7 @@ void Spawner::SpawnRandomObstacle()
 {
 	ConstantMovement* t = new ConstantMovement(
 		Transform(GetRandomLane()), 
-		"52_hello_mobile/Enemy1.bmp", obstacleSpeed); // (startLocation, imageFilePath, velocity)
+		"drawable/Enemy1.bmp", obstacleSpeed); // (startLocation, imageFilePath, velocity)
 	t->transform.position.x -= (t->image.getWidth() / 2);
 }
 

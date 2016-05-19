@@ -19,7 +19,7 @@ run:
 debug:
 	@echo "Compiling..."
 	@ndk-build
-	@echo "Bulding and installing..."
+	@echo "Building and installing..."
 	@ant debug install
 	@echo "Launching"
 	@adb shell monkey -p com.tutorial.game -c android.intent.category.LAUNCHER 1

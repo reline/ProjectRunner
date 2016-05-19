@@ -1,28 +1,27 @@
 # Project Runner
-An android game for class
+An Android application using C++ through the Android Native Development Kit, Project Runner is a 2D
+ Top-Down, endless running platformer where the player looks down at the player and leads their
+ character through a never ending dungeon. Design inspired by Temple Run and art inspired by The
+ Impossible Game, the player will use swipes to change lanes and directions in order to avoid
+ obstacles to achieve a high score.
 
 ## Dependencies
-JDK 8
+**[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**
 
-Android NDK
+**[Apache Ant](http://ant.apache.org/bindownload.cgi)**
 
-Apache Ant
+**[Android NDK](http://developer.android.com/ndk/downloads/index.html)**
 
-Android SDK Manager
+**[Android SDK Manager](http://developer.android.com/sdk/index.html#Other)** - Android 5.1 (Lollipop)
 
-->Android 4.0.3
+Set JAVA_HOME environment variable to JDK (ex: C:\Program Files\Java\jdk1.8.0_45)
 
-->->SDK Platform
+Set ANDROID_HOME environment variable to Android SDK (ex: C:\Android\sdk)
 
-->->->* System Images (<- recommended)
+Ensure that the NDK, Ant, and Android SDK platform tools are in your Path environment variable
+(ex: C:\android-ndk-r10e;C:\apache-ant-1.9.6\bin;C:\Android\sdk\platform-tools)
 
-Make sure the NDK, Ant, and AndroidSDK-platform-tools are in you Path environment variable (example: C:\AndroidDevelopment\android-ndk-r10e;C:\AndroidDevelopment\apache-ant-1.9.6\bin;C:\AndroidSDK\platform-tools)
-
-Make sure the JAVA_HOME environment variable points to the JDK folder (example: C:\Program Files\Java\jdk1.8.0_45)
-
-Make sure the ANDROID_HOME environment variable points to the android-sdk-windows folder (example: C:\AndroidSDK)
-
-## How to build
+## How to build & install
 `ndk-build && ant debug install`
 
 OR
@@ -31,21 +30,26 @@ OR
 
 in the root folder
 
-## SDL main source code
-/jni/src
+## Code
+Java source can be found in `/src` and C/C++ source can be found in `/jni/src`
 
 ## Libraries
+**[SDL2](https://www.libsdl.org/download-2.0.php)**
+
+Copyright Notice:
+-----------------
+The files within this zip file are copyrighted by Lazy Foo' Productions (2004-2015)
+and may not be redistributed without written permission.
+
+This project is linked against:
+----------------------------------------
+Windows:
 SDL2
+SDL2main
+SDL2_image
+SDL2_ttf
 
-Google Play Game Services
-
-## Specifications
-Procedurally generated endless level
-
-Move across three lanes
-
-Turn right and left to avoid crashing
-
-Random obstacles must be avoided
-
-Local and global leaderboards
+*nix:
+SDL2
+SDL2_image
+SDL2_ttf

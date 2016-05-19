@@ -36,19 +36,19 @@ int main( int argc, char* args[] )
 	int screenWidth = Game::instance->screenRect.w;
 	int screenHeight = Game::instance->screenRect.h;
 
-	manager.hurtSound = Mix_LoadWAV("52_hello_mobile/hurt.wav");
+	manager.hurtSound = Mix_LoadWAV("raw/hurt.wav");
 	if(manager.hurtSound == nullptr)
 		SDL_Log("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 
 	//Draw background to the screen
-	// Thing* background = Thing::Spawn(Transform(Vector2()), "52_hello_mobile/PathWay.bmp");
+	// Thing* background = Thing::Spawn(Transform(Vector2()), "drawable/PathWay.bmp");
 	// SDL_Rect backgroundRect = { 0, 0, Game::instance->screenRect.w, Game::instance->screenRect.h };
 	// background->widthHeightOverride = &backgroundRect;
 
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
 	// Font Stuff
-	TTF_Font* Sans = TTF_OpenFont("52_hello_mobile/DroidSans.ttf", 24);
+	TTF_Font* Sans = TTF_OpenFont("drawable/DroidSans.ttf", 24);
 
 	SDL_Rect scoreRect; //create a rect
 	scoreRect.x = 0;  //controls the rect's x coordinate 
@@ -71,7 +71,7 @@ int main( int argc, char* args[] )
 	// our player!
 	Player* player = new Player(
 		Transform(Vector2()),
-		"52_hello_mobile/Player.bmp", 200, CENTER); // rendered last (100)
+		"drawable/Player.bmp", 200, CENTER); // rendered last (100)
 
 	// x coordinates for the center of each lane
 	float middleLaneXCoord = screenWidth / 2;
@@ -286,7 +286,7 @@ void reset()
 	//delete Player::instance;
 	Player::instance = new Player(
 		Transform(Vector2()),
-		"52_hello_mobile/Player.bmp", 200, CENTER); // rendered last (100)
+		"drawable/Player.bmp", 200, CENTER); // rendered last (100)
 	Player::instance->transform.position = Vector2(Game::instance->screenRect.w / 2 - (Player::instance->image.getWidth() / 2), 
 													Game::instance->screenRect.h - (Player::instance->image.getWidth() * 2));
 	// reset the spawner
@@ -294,7 +294,7 @@ void reset()
 	Spawner::instance = new Spawner(Transform(Vector2(0,1)));
 
 	// reset the sound for the manager
-	GameManager::instance->hurtSound = Mix_LoadWAV("52_hello_mobile/hurt.wav");
+	GameManager::instance->hurtSound = Mix_LoadWAV("raw/hurt.wav");
 
 	/*// clear screen
 	SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);

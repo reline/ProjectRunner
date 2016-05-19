@@ -1,21 +1,8 @@
-*.o
-*.o.d
-*.apk
+# Generated files
+libs/
+bin/
+gen/
+obj/
 
-bin/AndroidManifest.xml.d
-bin/SDLActivity-debug-unaligned.apk.d
-bin/SDLActivity.ap_
-bin/SDLActivity.ap_.d
-bin/build.prop
-bin/classes.dex.d
-gen/R.java.d
-libs/armeabi-v7a/libSDL2.so
-libs/armeabi-v7a/libmain.so
-libs/armeabi/libSDL2.so
-libs/armeabi/libmain.so
-libs/x86/libSDL2.so
-libs/x86/libmain.so
-obj/local/armeabi-v7a/libmain.so
-obj/local/armeabi/libmain.so
-obj/local/x86/libmain.so
-
+# User-specific configurations
+.idea/
