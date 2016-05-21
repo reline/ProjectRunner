@@ -3,7 +3,7 @@
      com.gamemaker.game
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.tutorial.game"
+      package="com.raisingthebar.projectr"
       android:versionCode="1"
       android:versionName="1.0"
       android:installLocation="auto">
@@ -17,6 +17,10 @@
 
          An example Java class can be found in README-android.txt
     -->
+
+    <!-- Android 2.3.3 -->
+    <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="22" />
+
     <application android:label="@string/app_name"
                  android:icon="@mipmap/ic_launcher"
                  android:allowBackup="true"
@@ -24,8 +28,7 @@
                  android:hardwareAccelerated="true" >
         <activity android:name="MainActivity"
                   android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden|orientation"
-                  >
+                  android:configChanges="keyboardHidden|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,18 +37,13 @@
         <activity android:name="GameActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation"
-            >
+            android:configChanges="keyboardHidden|orientation">
         </activity>
         <activity android:name="GameoverActivity"
             android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation"
-            >
+            android:configChanges="keyboardHidden|orientation">
         </activity>
     </application>
-
-    <!-- Android 2.3.3 -->
-    <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="22" />
 
     <!-- OpenGL ES 2.0 -->
     <uses-feature android:glEsVersion="0x00020000" /> 

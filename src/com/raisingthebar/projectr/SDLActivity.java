@@ -1,4 +1,4 @@
-package org.libsdl.app;
+package com.raisingthebar.projectr;
 
 import java.util.ArrayList;
 import java.util.Arrays;

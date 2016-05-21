@@ -64,7 +64,7 @@ Android_PumpEvents(_THIS)
     /* No polling necessary */
 
     /*
-     * Android_ResumeSem and Android_PauseSem are signaled from Java_org_libsdl_app_SDLActivity_nativePause and Java_org_libsdl_app_SDLActivity_nativeResume
+     * Android_ResumeSem and Android_PauseSem are signaled from Java_com_raisingthebar_projectr_SDLActivity_nativePause and Java_com_raisingthebar_projectr_SDLActivity_nativeResume
      * When the pause semaphore is signaled, if SDL_ANDROID_BLOCK_ON_PAUSE is defined the event loop will block until the resume signal is emitted.
      */
 

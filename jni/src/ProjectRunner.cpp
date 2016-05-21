@@ -108,6 +108,8 @@ int main( int argc, char* args[] )
 	/** APPLICATION LOOP **/
 	while(!quit)
 	{
+        SDL_Log("DEBUGGING - Game is running", "GameActivity");
+
 		//Clear screen for main menu Screen
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
@@ -310,10 +312,13 @@ void reset()
 #ifdef __cplusplus
 extern "C" {
 #endif
-    JNIEXPORT jint JNICALL Java_com_tutorial_game_GameActivity_stringFromJNI(JNIEnv* env, /*jclass cls,*/ jobject obj)
+    JNIEXPORT jboolean JNICALL Java_com_raisingthebar_projectr_GameActivity_isGameFinished(JNIEnv* env, /*jclass cls,*/ jobject obj)
     {
-        //return Game::instance->currentLives;
-        return false;
+        if (Game::instance != nullptr) {
+            return Game::instance->gameState == isGameOver;
+        } else {
+            return false;
+        }
     }
 #ifdef __cplusplus
 }

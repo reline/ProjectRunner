@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>smpeg2</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.libsdl.smpeg2</string>
+	<string>com.raisingthebar.smpeg2</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

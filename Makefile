@@ -14,7 +14,7 @@ install:
 
 run:
 	@echo "Launching"
-	@adb shell monkey -p com.tutorial.game -c android.intent.category.LAUNCHER 1
+	@adb shell monkey -p com.raisingthebar.projectr -c android.intent.category.LAUNCHER 1
 
 debug:
 	@echo "Compiling..."
@@ -22,7 +22,7 @@ debug:
 	@echo "Building and installing..."
 	@ant debug install
 	@echo "Launching"
-	@adb shell monkey -p com.tutorial.game -c android.intent.category.LAUNCHER 1
+	@adb shell monkey -p com.raisingthebar.projectr -c android.intent.category.LAUNCHER 1
 	@echo "Debugging:"
 	@adb logcat | grep $$(adb shell ps | grep tutorial | awk '{print $$2}')
 	@echo "done"
