@@ -1,3 +1,7 @@
+#pragma once
+
+#include <jni.h>
+
 //Using SDL, standard IO, and, strings
 #include <SDL.h>
 #include <SDL_ttf.h>
@@ -302,3 +306,15 @@ void reset()
 	// update screen
 	SDL_RenderPresent(Game::instance->renderer);*/
 }
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    JNIEXPORT jint JNICALL Java_com_tutorial_game_GameActivity_stringFromJNI(JNIEnv* env, /*jclass cls,*/ jobject obj)
+    {
+        //return Game::instance->currentLives;
+        return false;
+    }
+#ifdef __cplusplus
+}
+#endif
