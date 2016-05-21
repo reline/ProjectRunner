@@ -24,5 +24,5 @@ debug:
 	@echo "Launching"
 	@adb shell monkey -p com.raisingthebar.projectr -c android.intent.category.LAUNCHER 1
 	@echo "Debugging:"
-	@adb logcat | grep $$(adb shell ps | grep tutorial | awk '{print $$2}')
+	@adb logcat | grep $$(adb shell ps | grep projectr | awk '{print $$2}')
 	@echo "done"

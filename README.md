@@ -21,6 +21,9 @@ Set ANDROID_HOME environment variable to Android SDK (ex: C:\Android\sdk)
 Ensure that the NDK, Ant, and Android SDK platform tools are in your Path environment variable
 (ex: C:\android-ndk-r10e;C:\apache-ant-1.9.6\bin;C:\Android\sdk\platform-tools)
 
+## Libraries
+**[SDL2](https://www.libsdl.org/download-2.0.php)**
+
 ## How to build & install
 `ndk-build && ant debug install`
 
@@ -33,9 +36,6 @@ in the root folder
 ## Code
 Java source can be found in `/src` and C/C++ source can be found in `/jni/src`
 
-## Libraries
-**[SDL2](https://www.libsdl.org/download-2.0.php)**
-
 Copyright Notice:
 -----------------
 The files within this zip file are copyrighted by Lazy Foo' Productions (2004-2015)
@@ -43,13 +43,18 @@ and may not be redistributed without written permission.
 
 This project is linked against:
 ----------------------------------------
-Windows:
+##### Windows:
 SDL2
+
 SDL2main
+
 SDL2_image
+
 SDL2_ttf
 
-*nix:
+##### *nix:
 SDL2
+
 SDL2_image
+
 SDL2_ttf
