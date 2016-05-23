@@ -23,8 +23,6 @@
 #include "Player.h"
 #include "Spawner.h"
 
-// extern TTF_Font* TTF_OpenFont(const char *file, int ptsize);
-
 #define SSTR(x) dynamic_cast<std::ostringstream&>((std::ostringstream() << std::dec << x)).str()
 
 void reset();
@@ -44,11 +42,6 @@ int main( int argc, char* args[] )
 	if(manager.hurtSound == nullptr)
 		SDL_Log("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 
-	//Draw background to the screen
-	// Thing* background = Thing::Spawn(Transform(Vector2()), "drawable/PathWay.bmp");
-	// SDL_Rect backgroundRect = { 0, 0, Game::instance->screenRect.w, Game::instance->screenRect.h };
-	// background->widthHeightOverride = &backgroundRect;
-
 	Spawner* s = new Spawner(Transform(Vector2(0,1)));
 
 	// Font Stuff
@@ -56,13 +49,13 @@ int main( int argc, char* args[] )
 
 	SDL_Rect scoreRect; //create a rect
 	scoreRect.x = 0;  //controls the rect's x coordinate 
-	scoreRect.y = 0; // controls the rect's y coordinte
+	scoreRect.y = 0; // controls the rect's y coordinate
 	scoreRect.w = screenWidth / 5; // controls the width of the rect
 	scoreRect.h = screenHeight / 30; // controls the height of the rect
 
 	SDL_Rect lifeRect; //create a rect
 	lifeRect.x = screenWidth - (screenWidth / 7);  //controls the rect's x coordinate 
-	lifeRect.y = 0; // controls the rect's y coordinte
+	lifeRect.y = 0; // controls the rect's y coordinate
 	lifeRect.w = screenWidth / 7; // controls the width of the rect
 	lifeRect.h = screenHeight / 30; // controls the height of the rect
 
@@ -70,7 +63,7 @@ int main( int argc, char* args[] )
 	gameOverRect.w = screenWidth / 5; // controls the width of the rect
 	gameOverRect.h = screenHeight / 30; // controls the height of the rect
 	gameOverRect.x = screenWidth / 2 - gameOverRect.w / 2;  //controls the rect's x coordinate 
-	gameOverRect.y = screenHeight / 2 - gameOverRect.h / 2; // controls the rect's y coordinte
+	gameOverRect.y = screenHeight / 2 - gameOverRect.h / 2; // controls the rect's y coordinate
 
 	// our player!
 	Player* player = new Player(
@@ -86,6 +79,7 @@ int main( int argc, char* args[] )
 	manager.lanes.push_back(Vector2(middleLaneXCoord, 0));
 	manager.lanes.push_back(Vector2(rightLaneXCoord, 0));
 
+    // place our player in the starting position
 	player->transform.position = Vector2(middleLaneXCoord - (player->image.getWidth() / 2), screenHeight - (player->image.getWidth() * 2));
 
 	//Main loop flag
@@ -104,57 +98,14 @@ int main( int argc, char* args[] )
 	SDL_Texture* playerLifeTexture = nullptr;
 	SDL_Texture* gameOverTexture = nullptr;
 
-
 	/** APPLICATION LOOP **/
 	while(!quit)
 	{
         SDL_Log("DEBUGGING - Game is running", "GameActivity");
 
-		//Clear screen for main menu Screen
+		//Clear screen for game
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
-
-		gameOverSurface = TTF_RenderText_Solid(Sans, "Click to play!", {0, 0, 0});
-		gameOverTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, gameOverSurface);
-		SDL_RenderCopy(Game::instance->renderer, gameOverTexture, NULL, &gameOverRect);
-
-		//Update screen
-		SDL_RenderPresent(Game::instance->renderer);
-
-		/** MAIN MENU LOOP **/
-		while(Game::instance->gameState == isMainMenu)
-		{
-			while(SDL_PollEvent(&e) != 0)
-			{
-				// todo: draw our 'play' button
-				//User requests quit
-				if( e.type == SDL_QUIT)
-				{
-					quit = true;
-					break;
-				}
-				//Touch down
-				else if(e.type == SDL_FINGERDOWN)
-				{
-					// todo: if button clicked...
-					Game::instance->gameState = isGamePlay;
-					touchLocation.x = e.tfinger.x * screenWidth;
-					touchLocation.y = e.tfinger.y * screenHeight;					
-				}
-				//Touch motion
-				else if(e.type == SDL_FINGERMOTION)
-				{
-					touchLocation.x = e.tfinger.x * screenWidth;
-					touchLocation.y = e.tfinger.y * screenHeight;
-				}
-				//Touch release
-				else if(e.type == SDL_FINGERUP)
-				{
-					touchLocation.x = e.tfinger.x * screenWidth;
-					touchLocation.y = e.tfinger.y * screenHeight;
-				}
-			}
-		}
 
 		/** GAME LOOP **/
 		while(Game::instance->gameState == isGamePlay)
@@ -207,18 +158,9 @@ int main( int argc, char* args[] )
 			SDL_SetRenderDrawColor(Game::instance->renderer, 0x00, 0x00, 0x00, 0x00);
 			SDL_RenderClear(Game::instance->renderer);
 
-			// breakin stuff, oh yeah
-			/*SDL_Rect fillRect = { (screenWidth / 3) - (screenWidth / 20), 0, screenWidth / 20, screenHeight };
-	        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
-	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );
-
-	        fillRect = { (screenWidth / 3) * 2, 0, screenWidth / 20, screenHeight };
-	        SDL_SetRenderDrawColor( Game::instance->renderer, 0xFF, 0x0FF, 0x0FF, 0xFF );        
-	        SDL_RenderFillRect( Game::instance->renderer, &fillRect );*/
-
 			Game::Tick();
-			// player->Render();
 
+            // set surfaces for our text
 			if(scoreSurface != nullptr)
 				// delete scoreSurface;
 				SDL_FreeSurface(scoreSurface);
@@ -246,18 +188,12 @@ int main( int argc, char* args[] )
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0x00, 0x00, 0x00, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
 
-		gameOverSurface = TTF_RenderText_Solid(Sans, ("Score: " + SSTR(Game::instance->score)).c_str(), {255, 255, 255});
-		gameOverTexture = SDL_CreateTextureFromSurface(Game::instance->renderer, gameOverSurface);
-		SDL_RenderCopy(Game::instance->renderer, gameOverTexture, NULL, &gameOverRect);
-
 		//Update screen
-		SDL_RenderPresent(Game::instance->renderer);	
-		
+		SDL_RenderPresent(Game::instance->renderer);
 		Mix_FreeChunk(manager.hurtSound);
 
 		//Free resources
 		Game::Exit();
-
 		reset();
 
 		/** GAMEOVER LOOP **/
@@ -289,24 +225,16 @@ void reset()
 	Game::instance->score = 0;
 
 	// reset the player
-	//delete Player::instance;
 	Player::instance = new Player(
 		Transform(Vector2()),
 		"drawable/Player.bmp", 200, CENTER); // rendered last (100)
 	Player::instance->transform.position = Vector2(Game::instance->screenRect.w / 2 - (Player::instance->image.getWidth() / 2), 
 													Game::instance->screenRect.h - (Player::instance->image.getWidth() * 2));
 	// reset the spawner
-	//delete Spawner::instance;
 	Spawner::instance = new Spawner(Transform(Vector2(0,1)));
 
 	// reset the sound for the manager
 	GameManager::instance->hurtSound = Mix_LoadWAV("raw/hurt.wav");
-
-	/*// clear screen
-	SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-	SDL_RenderClear(Game::instance->renderer);
-	// update screen
-	SDL_RenderPresent(Game::instance->renderer);*/
 }
 
 #ifdef __cplusplus
