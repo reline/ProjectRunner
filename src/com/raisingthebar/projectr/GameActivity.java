@@ -21,8 +21,6 @@ public class GameActivity extends SDLActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "Game " + Boolean.toString(isGameFinished()));
-
         super.onCreate(savedInstanceState);
 
         handler = new Handler();
