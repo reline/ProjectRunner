@@ -34,9 +34,5 @@ public:
 	void moveLeft(int screenWidth);
 	void moveRight(int screenWidth);
 
-	// turning
-	void turnLeft();
-	void turnRight();
-
 	uint getLane();
 };

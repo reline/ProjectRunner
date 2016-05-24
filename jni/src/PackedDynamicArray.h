@@ -93,7 +93,6 @@ public:
 			// SDL_Log( i << '\t' << array[i] << '\n' );
 			SDL_Log("%d\t%d", i, array[i]);
 		}
-		SDL_Log("finished display");
 	}
 
 private:

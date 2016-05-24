@@ -53,19 +53,6 @@ Game::Game(char* name, Uint32 flags)
 
 Game::~Game()
 {
-	/*for(auto &it : Thing::things)
-	{
-		// Iterate textures
-		for(Thing* thing : it.second)
-		{
-			if(thing != nullptr)
-				thing->Destroy();
-		}
-	}*/
-	/*SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
-	SDL_Quit();*/
-	printf("Game over man! Game over!\n");
 	exit(0);
 }
 
@@ -93,14 +80,8 @@ void Game::Render()
 		if(theDoomedOnes[i] != nullptr)
 		{
 			theDoomedOnes[i]->Destroy();
-			//SDL_Log("killed one");
 		}
 	}
-	// for(auto &it : Thing::things)
-	// {
-	// 	SDL_Log("displaying");
-	// 	it.second.Display();
-	// }
 }
 
 void Game::Tick()
@@ -112,7 +93,6 @@ void Game::Tick()
 		instance->score++;
 		instance->currentSecond = 0;
 	}
-	//SDL_Log(SSTR(instance->score).c_str());
 	Render();
 }
 

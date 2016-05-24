@@ -1,23 +1,15 @@
 package com.raisingthebar.projectr;
 
 import android.content.Intent;
-import android.content.IntentSender;
-import android.util.Log;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.TextView;
-import android.app.Activity;
-
-import java.lang.Runnable;
-import java.lang.Boolean;
-import java.lang.Override;
-import java.lang.String;
-import java.lang.System;
+import android.util.Log;
 
 public class GameActivity extends SDLActivity {
 
-    private static final String TAG = "DEBUGGING";
+    private static final String TAG = "GameActivity";
     private Handler handler;
+    private boolean flag;
 
     static {
         System.loadLibrary("main");
@@ -34,6 +26,7 @@ public class GameActivity extends SDLActivity {
         super.onCreate(savedInstanceState);
 
         handler = new Handler();
+        flag = false;
 
         final Runnable r = new Runnable() {
             public void run() {
@@ -45,8 +38,12 @@ public class GameActivity extends SDLActivity {
                     Intent myIntent = new Intent(GameActivity.this, GameoverActivity.class);
                     // myIntent.putExtra("SCORE", SCORE);
                     GameActivity.this.startActivity(myIntent);
+                    flag = true;
                 }
-                handler.postDelayed(this, 1000);
+
+                if (!flag) {
+                    handler.postDelayed(this, 1000);
+                }
             }
         };
 

@@ -92,16 +92,6 @@ void Player::moveRight(int distance)
 	}
 }
 
-void Player::turnLeft()
-{
-	// TODO
-}
-
-void Player::turnRight()
-{
-	// TODO
-}
-
 uint Player::getLane()
 {
 	return this->currentLane;

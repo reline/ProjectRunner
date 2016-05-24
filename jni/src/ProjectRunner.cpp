@@ -101,8 +101,6 @@ int main( int argc, char* args[] )
 	/** APPLICATION LOOP **/
 	while(!quit)
 	{
-        SDL_Log("DEBUGGING - Game is running", "GameActivity");
-
 		//Clear screen for game
 		SDL_SetRenderDrawColor(Game::instance->renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		SDL_RenderClear(Game::instance->renderer);
