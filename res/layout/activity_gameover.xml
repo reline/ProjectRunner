@@ -18,6 +18,8 @@
         android:hint="@string/username"
         android:id="@+id/nameTextView"
         android:layout_marginBottom="37dp"
+        android:inputType="textCapCharacters"
+        android:maxLength="3"
         android:layout_above="@+id/continueButton"
         android:layout_centerHorizontal="true" />
 
