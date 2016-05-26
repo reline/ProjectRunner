@@ -4,4 +4,10 @@
     <string name="project">Project:</string>
     <string name="play">Play</string>
     <string name="cont">Continue</string>
+    <string name="username">Name</string>
+    <string name="no_data">No data</string>
+    <string name="play_again">Play Again</string>
+    <string name="score">Score</string>
+    <string name="date">Date</string>
+    <string name="id">ID</string>
 </resources>

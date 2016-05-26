@@ -3,14 +3,23 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<TextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Score"
-        android:id="@+id/scoreText"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />-->
+        android:text="@string/score"
+        android:id="@+id/scoreTextView"
+        android:layout_above="@+id/nameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"
+        android:id="@+id/nameTextView"
+        android:layout_marginBottom="37dp"
+        android:layout_above="@+id/continueButton"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -19,4 +28,7 @@
         android:id="@+id/continueButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+
+
 </RelativeLayout>

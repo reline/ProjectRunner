@@ -7,14 +7,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/logo"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/playButton"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/play"
-        android:id="@+id/button"
+        android:id="@+id/playButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 

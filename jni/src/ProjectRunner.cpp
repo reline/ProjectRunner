@@ -220,7 +220,6 @@ void reset()
 	// reset player's health, ticks, score
 	Game::instance->currentLives = 3;
 	Game::instance->frames = 0;
-	Game::instance->score = 0;
 
 	// reset the player
 	Player::instance = new Player(
@@ -244,6 +243,15 @@ extern "C" {
             return Game::instance->gameState == isGameOver;
         } else {
             return false;
+        }
+    }
+
+    JNIEXPORT jint JNICALL Java_com_raisingthebar_projectr_GameActivity_getScore(JNIEnv* env, /*jclass cls,*/ jobject obj)
+    {
+        if (Game::instance != nullptr) {
+            return Game::instance->score;
+        } else {
+            return 0;
         }
     }
 #ifdef __cplusplus

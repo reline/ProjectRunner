@@ -17,7 +17,7 @@ public class GameActivity extends SDLActivity {
 
     // define native functions in jni/SDL2/src/main/android/SDL_android_main.c && jni/src/
     public static native boolean isGameFinished();
-    //public static native Boolean isGameFinished();
+    public static native int getScore();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +29,13 @@ public class GameActivity extends SDLActivity {
         final Runnable r = new Runnable() {
             public void run() {
 
+                int score = getScore();
                 if (isGameFinished()) {
                     nativeQuit();
 
                     // if player lives == 0, push the score to a new intent
                     Intent myIntent = new Intent(GameActivity.this, GameoverActivity.class);
-                    // myIntent.putExtra("SCORE", SCORE);
+                    myIntent.putExtra("SCORE", score);
                     GameActivity.this.startActivity(myIntent);
                     flag = true;
                 }
