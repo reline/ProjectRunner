@@ -6,3 +6,4 @@ obj/
 
 # User-specific configurations
 .idea/
+local.properties

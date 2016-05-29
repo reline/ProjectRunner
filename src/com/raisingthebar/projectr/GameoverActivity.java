@@ -17,8 +17,6 @@ import java.util.Locale;
 
 public class GameoverActivity extends Activity {
 
-    private static final String TAG = "GameoverActivity";
-
     private DBHelper dbHelper;
     private SQLiteDatabase db;
 
@@ -72,6 +70,11 @@ public class GameoverActivity extends Activity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
     }
 
     public void insertEntry() {

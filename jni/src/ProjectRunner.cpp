@@ -199,10 +199,7 @@ int main( int argc, char* args[] )
 		{
 			while(SDL_PollEvent(&e) != 0)
 			{
-				if(e.type == SDL_FINGERDOWN)
-				{
-					Game::instance->gameState = isMainMenu;				
-				}
+
 			}
 
 		}

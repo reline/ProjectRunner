@@ -12,8 +12,6 @@ import android.widget.SimpleCursorAdapter;
 
 public class ScoreActivity extends ListActivity {
 
-    private static final String TAG = "ScoreActivity";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,5 +60,10 @@ public class ScoreActivity extends ListActivity {
         );
         Cursor cursor = cursorLoader.loadInBackground();
         simpleCursorAdapter.swapCursor(cursor);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
     }
 }

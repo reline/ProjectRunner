@@ -6,15 +6,13 @@ import android.os.Handler;
 
 public class GameActivity extends SDLActivity {
 
-    private static final String TAG = "GameActivity";
     private Handler handler;
-    private boolean flag;
 
     static {
         System.loadLibrary("main");
     }
 
-    // define native functions in jni/SDL2/src/main/android/SDL_android_main.c && jni/src/
+    // define native functions in jni/
     public static native boolean isGameFinished();
     public static native int getScore();
 
@@ -23,23 +21,16 @@ public class GameActivity extends SDLActivity {
         super.onCreate(savedInstanceState);
 
         handler = new Handler();
-        flag = false;
 
         final Runnable r = new Runnable() {
             public void run() {
-
-                int score = getScore();
                 if (isGameFinished()) {
-                    nativeQuit();
-
                     // if player lives == 0, push the score to a new intent
                     Intent myIntent = new Intent(GameActivity.this, GameoverActivity.class);
-                    myIntent.putExtra("SCORE", score);
+                    myIntent.putExtra("SCORE", getScore());
                     GameActivity.this.startActivity(myIntent);
-                    flag = true;
-                }
-
-                if (!flag) {
+                    nativeQuit();
+                } else {
                     handler.postDelayed(this, 1000);
                 }
             }

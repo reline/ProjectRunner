@@ -25,13 +25,25 @@ Ensure that the NDK, Ant, and Android SDK platform tools are in your Path enviro
 **[SDL2](https://www.libsdl.org/download-2.0.php)**
 
 ## How to build & install
+##### Debug build
 `ndk-build && ant debug install`
 
 OR
 
 `make install`
 
-in the root folder
+in the root folder.
+
+##### Release build
+Create a `local.properties` file in the root folder which contains the following:
+```
+ndk.dir=C\:/your/ndk/path/android-ndk-r11c
+sdk.dir=C\:/your/sdk/path/Android/sdk
+key.store=C\:/your/keystore/path/android.jks
+key.alias=yourkeyname
+```
+Then in the root directory:
+`ndk-build && ant release install`
 
 ## Code
 Java source can be found in `/src` and C/C++ source can be found in `/jni/src`
